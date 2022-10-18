@@ -4,10 +4,16 @@ export default function Structures() {
   const AccordionBlock = {
     display: "block",
   };
+  const accordionTextarea = {
+    width: '100%',
+    border: 'none',
+    resize: 'none',
+  }
   return (
-    <bds-grid xxs="12" direction="column" gap="3" margin="y-3">
+    <bds-grid xxs="12" direction="column" gap="3">
+      {/* Accordion Default */}
       <bds-grid direction="column" xxs="12" align-items="center">
-        <bds-grid xxs="12" padding="y-2">
+        <bds-grid xxs="12" padding="y-2" margin="t-3">
           <bds-typo variant="fs-24" bold="bold">
             Accordion Default
           </bds-typo>
@@ -19,46 +25,25 @@ export default function Structures() {
           style={AccordionBlock}
         >
           <bds-accordion>
-            <bds-accordion-header
-              accordion-title="Title accordion"
-              icon=""
-              avatar-name=""
-              avatar-thumb=""
-            ></bds-accordion-header>
+            <bds-accordion-header accordion-title="Title accordion"></bds-accordion-header>
             <bds-accordion-body>
               <bds-typo variant="fs-16">Lorem ipsum dolor sit amet...</bds-typo>
             </bds-accordion-body>
           </bds-accordion>
-          <blockquote>
-            <code>
-              <pre>
-                &lt;h1&gt;teste&lt;/h1&gt;
-                &lt;h1&gt;teste&lt;/h1&gt;
-                &lt;h1&gt;teste&lt;/h1&gt;
-              </pre>
-            </code>
-          </blockquote>
-          <bds-input rows="9" disabled is-textarea value='<bds-accordion>
-            <bds-accordion-header
-              accordion-title="Title accordion"
-            ></bds-accordion-header>
-            <bds-accordion-body>
-              <bds-typo variant="fs-16">Lorem ipsum dolor sit amet...</bds-typo>
-            </bds-accordion-body>
-          </bds-accordion>'></bds-input>
-          <textarea rows="8" cols="20" value='
+          <textarea style={accordionTextarea} rows="8" cols="20" readOnly={true} value='
           <bds-accordion>
             <bds-accordion-header accordion-title="Title accordion"></bds-accordion-header>
             <bds-accordion-body>
               <bds-typo variant="fs-16">Lorem ipsum dolor sit amet...</bds-typo>
             </bds-accordion-body>
           </bds-accordion>'></textarea>
-          
         </bds-grid>
       </bds-grid>
-      <bds-grid direction="column">
-        <bds-grid padding="y-2">
-          <bds-typo variant="fs-16">Accordion Group Single Open</bds-typo>
+
+      {/* Accordion Group Single Open */}
+      <bds-grid direction="column" xxs="12" align-items="center">
+        <bds-grid xxs="12" padding="y-2" margin="t-3">
+          <bds-typo variant="fs-24" bold="bold">Accordion Group Single Open</bds-typo>
         </bds-grid>
         <bds-grid
           xxs="12"
@@ -123,11 +108,53 @@ export default function Structures() {
               </bds-accordion-body>
             </bds-accordion>
           </bds-accordion-group>
+          <textarea style={accordionTextarea} rows="40" cols="20" readOnly={true} value='
+          <bds-accordion-group collapse="single">
+          <bds-accordion>
+            <bds-accordion-header accordion-title="Title accordion"></bds-accordion-header>
+            <bds-accordion-body>
+              <bds-typo variant="fs-16">
+                Lorem ipsum dolor sit amet...
+              </bds-typo>
+            </bds-accordion-body>
+          </bds-accordion>
+
+          <bds-accordion>
+            <bds-accordion-header
+              accordion-title="Title accordion"></bds-accordion-header>
+            <bds-accordion-body>
+              <bds-typo variant="fs-16">
+                Lorem ipsum dolor sit amet...
+              </bds-typo>
+            </bds-accordion-body>
+          </bds-accordion>
+
+          <bds-accordion>
+            <bds-accordion-header
+              accordion-title="Title accordion"></bds-accordion-header>
+            <bds-accordion-body>
+              <bds-typo variant="fs-16">
+                Lorem ipsum dolor sit amet..
+              </bds-typo>
+            </bds-accordion-body>
+          </bds-accordion>
+
+          <bds-accordion>
+            <bds-accordion-header
+              accordion-title="Title accordion" icon="tag" avatar-name="Lucas Murta"></bds-accordion-header>
+            <bds-accordion-body>
+              <bds-typo variant="fs-16">
+                Lorem ipsum dolor sit amet...
+              </bds-typo>
+            </bds-accordion-body>
+          </bds-accordion>
+        </bds-accordion-group>'></textarea>
         </bds-grid>
       </bds-grid>
-      <bds-grid direction="column">
-        <bds-grid padding="y-2">
-          <bds-typo variant="fs-16">Accordion Group Single Multiple</bds-typo>
+      {/* Accordion Group Single Open */}
+      <bds-grid direction="column" xxs="12" align-items="center">
+        <bds-grid xxs="12" padding="y-2">
+          <bds-typo variant="fs-24" bold="bold">Accordion Group Single Multiple</bds-typo>
         </bds-grid>
         <bds-grid
           xxs="12"
@@ -192,6 +219,47 @@ export default function Structures() {
               </bds-accordion-body>
             </bds-accordion>
           </bds-accordion-group>
+          <textarea style={accordionTextarea} rows="40" cols="20" readOnly={true} value='
+          <bds-accordion-group collapse="multiple">
+          <bds-accordion>
+            <bds-accordion-header
+              accordion-title="Title accordion"></bds-accordion-header>
+            <bds-accordion-body>
+              <bds-typo variant="fs-16">
+                Lorem ipsum dolor sit amet...
+              </bds-typo>
+            </bds-accordion-body>
+          </bds-accordion>
+
+          <bds-accordion>
+            <bds-accordion-header accordion-title="Title accordion" icon="tag"></bds-accordion-header>
+            <bds-accordion-body>
+              <bds-typo variant="fs-16">
+                Lorem ipsum dolor sit amet...
+              </bds-typo>
+            </bds-accordion-body>
+          </bds-accordion>
+
+          <bds-accordion>
+            <bds-accordion-header accordion-title="Title accordion" icon="tag" avatar-name="Lucas Murta">
+            </bds-accordion-header>
+            <bds-accordion-body>
+              <bds-typo variant="fs-16">
+                Lorem ipsum dolor sit amet..
+              </bds-typo>
+            </bds-accordion-body>
+          </bds-accordion>
+
+          <bds-accordion>
+            <bds-accordion-header accordion-title="Title accordion" icon="tag" avatar-name="Lucas Murta">
+          </bds-accordion-header>
+            <bds-accordion-body>
+              <bds-typo variant="fs-16">
+                Lorem ipsum dolor sit amet...
+              </bds-typo>
+            </bds-accordion-body>
+          </bds-accordion>
+        </bds-accordion-group>'></textarea>
         </bds-grid>
       </bds-grid>
     </bds-grid>
