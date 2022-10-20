@@ -1,5 +1,5 @@
 {
-  "name": "blip-ds-react",
+  "name": "blip-ds-test-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,7 +15,7 @@
     "storybook-loader": "^0.1.4",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://takenet.github.io/blip-ds-react",
+  "homepage": "https://takenet.github.io/blip-ds-test-react",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
