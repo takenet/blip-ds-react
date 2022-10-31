@@ -1,19 +1,12 @@
 import React from "react";
 
 export default function AccordionGroupMultipleOpen() {
-  const AccordionBlock = {
-    display: "block",
-  };
-  const accordionTextarea = {
-    width: '100%',
-    border: 'none',
-    resize: 'none',
-  }
+ 
   return (
     <bds-grid direction="column" xxs="12" gap="4" margin="y-8">
       <bds-grid xxs="12" direction="column">
         <bds-typo class="title-2" variant="fs-24" bold="bold">
-        Accordion Group Single Multiple
+        Accordion Group Multiple Open
         </bds-typo>
         <hr />
       </bds-grid>
