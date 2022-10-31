@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/blip-ds-test-react/static/css/main.256a8d82.css",
-    "main.js": "/blip-ds-test-react/static/js/main.d267d385.js",
+    "main.css": "/blip-ds-test-react/static/css/main.9e501d5a.css",
+    "main.js": "/blip-ds-test-react/static/js/main.e099cc2b.js",
     "polyfills-dom.js": "/blip-ds-test-react/static/js/polyfills-dom.7b16586d.chunk.js",
     "polyfills-core-js.js": "/blip-ds-test-react/static/js/polyfills-core-js.adbde44c.chunk.js",
     "static/js/727.f51c5f51.chunk.js": "/blip-ds-test-react/static/js/727.f51c5f51.chunk.js",
@@ -79,8 +79,8 @@
     "static/js/4302.2e3db3a9.chunk.js": "/blip-ds-test-react/static/js/4302.2e3db3a9.chunk.js",
     "static/js/4879.35823f3e.chunk.js": "/blip-ds-test-react/static/js/4879.35823f3e.chunk.js",
     "index.html": "/blip-ds-test-react/index.html",
-    "main.256a8d82.css.map": "/blip-ds-test-react/static/css/main.256a8d82.css.map",
-    "main.d267d385.js.map": "/blip-ds-test-react/static/js/main.d267d385.js.map",
+    "main.9e501d5a.css.map": "/blip-ds-test-react/static/css/main.9e501d5a.css.map",
+    "main.e099cc2b.js.map": "/blip-ds-test-react/static/js/main.e099cc2b.js.map",
     "polyfills-dom.7b16586d.chunk.js.map": "/blip-ds-test-react/static/js/polyfills-dom.7b16586d.chunk.js.map",
     "polyfills-core-js.adbde44c.chunk.js.map": "/blip-ds-test-react/static/js/polyfills-core-js.adbde44c.chunk.js.map",
     "727.f51c5f51.chunk.js.map": "/blip-ds-test-react/static/js/727.f51c5f51.chunk.js.map",
@@ -158,7 +158,7 @@
     "4879.35823f3e.chunk.js.map": "/blip-ds-test-react/static/js/4879.35823f3e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.256a8d82.css",
-    "static/js/main.d267d385.js"
+    "static/css/main.9e501d5a.css",
+    "static/js/main.e099cc2b.js"
   ]
 }
