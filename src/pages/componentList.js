@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Card from "../pageComponents/cards/cards";
 
 function ComponentList() {
   return (
@@ -9,17 +9,15 @@ function ComponentList() {
           Component List React
         </bds-typo>
       </bds-grid>
-      <bds-grid xxs="12" justify-content="space-evenly">
-        <Link to="/accordion">
-          <bds-paper class="card-component">
-            <bds-grid padding="4">
-              <bds-typo variant="fs-24" bold="bold" margin="false">
-                Accordion
-              </bds-typo>
-            </bds-grid>
-          </bds-paper>
-        </Link>
+      <bds-grid container>
+        <bds-grid xxs="12" flex-wrap="wrap" gap="3">
+          <Card name="Accordion" link="accordion"/>
+          <Card name="Alert"/>
+          <Card name="Autocomplete"/>
+          <Card name="Avatar"/>
       </bds-grid>
+      </bds-grid>
+      
     </>
   );
 }
