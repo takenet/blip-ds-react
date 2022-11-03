@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CloseEvent from "./event/eventClose";
+import BannerClose from "./structures/CloseBanner/CloseStructures";
+import BannerContext from "./structures/ContextBanner/ContextStructures";
+import BannerLink from "./structures/LinkBanner/LinkStructures";
+import BannerVariant from "./structures/variantBanner/variantStructures";
 
-export default function TemplateComponent() {
+export default function Banner() {
   return (
     <>
       <bds-grid container xxs="12" justify-content="center" direction="column">
@@ -13,6 +18,7 @@ export default function TemplateComponent() {
           
           <bds-typo variant="fs-32" italic bold="extra-bold" margin="false">
             {/* Component name */}
+            Banner
           </bds-typo>
           <bds-grid>
             <bds-grid padding="l-2">
@@ -24,8 +30,7 @@ export default function TemplateComponent() {
 
         <bds-tabs align="left">
           <bds-tab group="tab1" label="Structures"></bds-tab>
-          <bds-tab group="tab2" label="Method"></bds-tab>
-          <bds-tab group="tab3" label="Event"></bds-tab>
+          <bds-tab group="tab2" label="Event"></bds-tab>
         </bds-tabs>
         <bds-grid xxs="11" margin="auto">
           <hr />
@@ -33,12 +38,14 @@ export default function TemplateComponent() {
         
         <bds-tab-panel group="tab1">
             {/* Import here the structures component */}
+            <BannerVariant />
+            <BannerClose />
+            <BannerLink />
+            <BannerContext />
         </bds-tab-panel>
         <bds-tab-panel group="tab2">
             {/* Import here the Method component */}
-          </bds-tab-panel>
-          <bds-tab-panel group="tab3">
-            {/* Import here the Event component */}
+            <CloseEvent />
           </bds-tab-panel>
         
       </bds-grid>
