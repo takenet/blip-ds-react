@@ -1,11 +1,15 @@
 import "./App.css";
-import Accordion from './components/accordion/Accordion';
+import "./pages/componentList.scss";
+import ComponentRoutes from "./routes";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   
   return (
     <div className="App">
-      <Accordion />
+      <Router basename={process.env.PUBLIC_URL}>
+        <ComponentRoutes />
+      </Router>
     </div>
   );
 }
