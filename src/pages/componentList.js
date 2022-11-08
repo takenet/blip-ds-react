@@ -2,6 +2,7 @@ import React from "react";
 import Card from "../pageComponents/cards/cards";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip } from "chart.js";
+import dsReact from '../assets/ds-react.svg';
 
 ChartJS.register(ArcElement, Tooltip);
 export const data = {
@@ -9,7 +10,7 @@ export const data = {
   datasets: [
     {
       label: "My First Dataset",
-      data: [2, 36],
+      data: [3, 36],
       backgroundColor: ["rgb(33, 204, 121)", "rgb(255, 99, 132)"],
       hoverOffset: 4,
     },
@@ -19,6 +20,10 @@ export const data = {
 function ComponentList() {
   // Any of the following formats may be used
 
+  const img = {
+    width: '100%'
+  }
+
   return (
     <>
       <bds-grid
@@ -26,24 +31,27 @@ function ComponentList() {
         container
         justify-content="center"
         direction="column"
-        gap="4"
+        gap="3"
       >
         <bds-grid xxs="12" margin="y-4">
           <bds-typo class="title-header" margin="false" bold="extra-bold" variant="fs-32">
             Components React
           </bds-typo>
         </bds-grid>
+        <bds-grid xxs="6" margin="auto">
+          <img style={img} src={dsReact} alt="logo do blip-ds e React" />
+        </bds-grid>
 
         <bds-grid xxs="12" justify-content="space-between" flex-wrap="wrap" margin="b-2">
           <bds-grid xxs="12">
             <bds-typo variant="fs-20" bold="bold">Components Info</bds-typo>
           </bds-grid>
-          <bds-grid xxs="12" xs="6" md="4" margin="t-2"  direction="row" gap="2" align-items="center">
+          <bds-grid xxs="12" xs="6" md="4" lg="3" margin="t-2"  direction="row" gap="2" align-items="center">
             <bds-paper elevation="primary">
               <bds-grid xxs="12" flex-wrap="wrap" padding="2" align-items="center">
                 <bds-grid xxs="12" padding="b-2">
                   <bds-typo class="text-card" variant="fs-16" margin="false" bold="bold">
-                    Components Avaliable
+                    Tested components avaliable
                   </bds-typo>
                 </bds-grid>
                 <bds-grid xxs="6">
@@ -57,25 +65,25 @@ function ComponentList() {
             </bds-paper>
           </bds-grid>
 
-          <bds-grid  xxs="12" xs="6" md="4" margin="t-2" direction="row" gap="2" align-items="center">
+          <bds-grid  xxs="12" xs="6" md="4" lg="3" margin="t-2" direction="row" gap="2" align-items="center">
             <bds-paper elevation="primary">
               <bds-grid xxs="12" flex-wrap="wrap" padding="2" align-items="center">
                 <bds-grid xxs="12" padding="b-2">
                   <bds-typo class="text-card" variant="fs-16" margin="false" bold="bold">
-                    Components Avaliable
+                    Avaliable components
                   </bds-typo>
                 </bds-grid>
                 <bds-grid xxs="6">
                   <bds-illustration name="organizations"></bds-illustration>
                 </bds-grid>
                 <bds-grid justify-content="center" xxs="6">
-                  <bds-typo variant="fs-32" margin="false" bold="extra-bold">38</bds-typo>
+                  <bds-typo variant="fs-32" margin="false" bold="extra-bold">39</bds-typo>
                 </bds-grid>
               </bds-grid>
             </bds-paper>
           </bds-grid>
 
-          <bds-grid  xxs="12" xs="6" md="4" margin="t-2" direction="row" gap="2" align-items="center">
+          <bds-grid  xxs="12" xs="6" md="4" lg="3" margin="t-2" direction="row" gap="2" align-items="center">
             <bds-paper elevation="primary">
               <bds-grid xxs="12" flex-wrap="wrap" padding="2" align-items="center">
                 <bds-grid xxs="12" padding="b-2">
@@ -106,6 +114,37 @@ function ComponentList() {
           <Card name="Button" status="warning" statusText="Under Contruction" />
           <Card name="Button Icon" status="warning" statusText="Under Contruction" />
           <Card name="Chip Tag" status="warning" statusText="Under Contruction" />
+          <Card name="Chip Clickable" status="warning" statusText="Under Contruction" />
+          <Card name="Chip Selected" status="warning" statusText="Under Contruction" />
+          <Card name="Checkbox" status="warning" statusText="Under Contruction" />
+          <Card name="Date Picker" status="warning" statusText="Under Contruction" />
+          <Card name="Grid" status="warning" statusText="Under Contruction" />
+          <Card name="Icon" status="warning" statusText="Under Contruction" />
+          <Card name="Illustration" status="warning" statusText="Under Contruction" />
+          <Card name="Input" status="warning" statusText="Under Contruction" />
+          <Card name="Input Chips" status="warning" statusText="Under Contruction" />
+          <Card name="Input Editable" status="warning" statusText="Under Contruction" />
+          <Card name="Input Password" status="warning" statusText="Under Contruction" />
+          <Card name="Input Phone Number" status="warning" statusText="Under Contruction" />
+          <Card name="Loading Bar" status="warning" statusText="Under Contruction" />
+          <Card name="Loading Spinner" status="warning" statusText="Under Contruction" />
+          <Card name="Loading Page" status="warning" statusText="Under Contruction" />
+          <Card name="Modal" status="warning" statusText="Under Contruction" />
+          <Card name="Menu" status="warning" statusText="Under Contruction" />
+          <Card name="Radio Button" status="warning" statusText="Under Contruction" />
+          <Card name="Pagination" status="warning" statusText="Under Contruction" />
+          <Card name="Paper" status="warning" statusText="Under Contruction" />
+          <Card name="Progress Bar" status="warning" statusText="Under Contruction" />
+          <Card name="Select" status="warning" statusText="Under Contruction" />
+          <Card name="Select Chips" status="warning" statusText="Under Contruction" />
+          <Card name="Sidebar" status="warning" statusText="Under Contruction" />
+          <Card name="Stepper" status="warning" statusText="Under Contruction" />
+          <Card name="Switch" status="warning" statusText="Under Contruction" />
+          <Card name="Tabs" status="warning" statusText="Under Contruction" />
+          <Card name="Tooltip" status="warning" statusText="Under Contruction" />
+          <Card name="Toast" status="warning" statusText="Under Contruction" />
+          <Card name="Typo" status="warning" statusText="Under Contruction" />
+          <Card name="Upload" status="warning" statusText="Under Contruction" />
         </bds-grid>
       </bds-grid>
     </>
