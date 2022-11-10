@@ -17,6 +17,18 @@ export const data = {
   ],
 };
 
+export const status = {
+  labels: ["Ok", "Problem identified", "Under Construction"],
+  datasets: [
+    {
+      label: "My First Dataset",
+      data: [3, 1, 35],
+      backgroundColor: ["rgb(33, 204, 121)", "rgb(255, 99, 132)", "rgb(255, 246, 168)" ],
+      hoverOffset: 4,
+    },
+  ],
+};
+
 function ComponentList() {
   // Any of the following formats may be used
 
@@ -42,11 +54,11 @@ function ComponentList() {
           <img style={img} src={dsReact} alt="logo do blip-ds e React" />
         </bds-grid>
 
-        <bds-grid xxs="12" justify-content="space-between" flex-wrap="wrap" margin="b-2">
+        <bds-grid xxs="12" justify-content="space-evenly" flex-wrap="wrap" margin="b-2">
           <bds-grid xxs="12">
             <bds-typo variant="fs-20" bold="bold">Components Info</bds-typo>
           </bds-grid>
-          <bds-grid xxs="12" xs="6" md="4" lg="3" margin="t-2"  direction="row" gap="2" align-items="center">
+          <bds-grid xxs="12" xs="7" md="5" lg="4" margin="t-2"  direction="row" gap="2" align-items="center">
             <bds-paper elevation="primary">
               <bds-grid xxs="12" flex-wrap="wrap" padding="2" align-items="center">
                 <bds-grid xxs="12" padding="b-2">
@@ -65,7 +77,27 @@ function ComponentList() {
             </bds-paper>
           </bds-grid>
 
-          <bds-grid  xxs="12" xs="6" md="4" lg="3" margin="t-2" direction="row" gap="2" align-items="center">
+          <bds-grid xxs="12" xs="7" md="5" lg="4" margin="t-2"  direction="row" gap="2" align-items="center">
+            <bds-paper elevation="primary">
+              <bds-grid xxs="12" flex-wrap="wrap" padding="2" align-items="center">
+                <bds-grid xxs="12" padding="b-2">
+                  <bds-typo class="text-card" variant="fs-16" margin="false" bold="bold">
+                    Components status
+                  </bds-typo>
+                </bds-grid>
+                <bds-grid xxs="6">
+                  <Pie data={status} />
+                </bds-grid>
+                <bds-grid direction="column" xxs="6" gap="2">
+                  <bds-chip-tag color="success">ok</bds-chip-tag>
+                  <bds-chip-tag color="danger">Problem identified</bds-chip-tag>
+                  <bds-chip-tag color="warning">Under Construction</bds-chip-tag>
+                </bds-grid>
+              </bds-grid>
+            </bds-paper>
+          </bds-grid>
+
+          <bds-grid  xxs="12" xs="7" md="5" lg="4" margin="t-2" direction="row" gap="2" align-items="center">
             <bds-paper elevation="primary">
               <bds-grid xxs="12" flex-wrap="wrap" padding="2" align-items="center">
                 <bds-grid xxs="12" padding="b-2">
@@ -83,7 +115,7 @@ function ComponentList() {
             </bds-paper>
           </bds-grid>
 
-          <bds-grid  xxs="12" xs="6" md="4" lg="3" margin="t-2" direction="row" gap="2" align-items="center">
+          <bds-grid  xxs="12" xs="7" md="5" lg="4" margin="t-2" direction="row" gap="2" align-items="center">
             <bds-paper elevation="primary">
               <bds-grid xxs="12" flex-wrap="wrap" padding="2" align-items="center">
                 <bds-grid xxs="12" padding="b-2">
@@ -108,7 +140,7 @@ function ComponentList() {
           </bds-grid>
           <Card  name="Accordion" link="accordion" status="success" statusText="Ok" />
           <Card name="Alert" link="alert" status="success" statusText="Ok" />
-          <Card name="Autocomplete" status="warning" statusText="Under Contruction" />
+          <Card name="Autocomplete" link="autocomplete" status="danger" statusText="Problem identified" />
           <Card name="Avatar" status="warning" statusText="Under Contruction" />
           <Card name="Banner" link="banner" status="success" statusText="Ok" />
           <Card name="Button" status="warning" statusText="Under Contruction" />

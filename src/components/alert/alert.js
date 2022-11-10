@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ToggleMethod from "./method/toggleMethod";
-import AlertDelete from "./structures/alertDelete/alertDelete";
-import AlertError from "./structures/alertError/alertError";
-import AlertSystem from "./structures/alertSystem/alertSystem";
-import AlertWarning from "./structures/alertWarning/alertWarning";
+import AlertDelete from "./structures/alertDelete";
+import AlertError from "./structures/alertError";
+import AlertSystem from "./structures/alertSystem";
+import AlertWarning from "./structures/alertWarning";
 
 export default function Alert() {
   return (

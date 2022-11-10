@@ -1,12 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CloseEvent from "./event/eventClose";
-import BannerClose from "./structures/CloseBanner";
-import BannerContext from "./structures/ContextBanner";
-import BannerLink from "./structures/LinkBanner";
-import BannerVariant from "./structures/VariantBanner";
+import BlurEvent from "./event/bdsBlur";
+import CancelEvent from "./event/bdsCancel";
+import ChangeEvent from "./event/bdsChange";
+import FocusEvent from "./event/bdsFocus";
+import InputEvent from "./event/bdsInput";
+import SelectedChangeEvent from "./event/bdsSelectedChange";
+import AutocompleteDefault from "./structures/autocompleteDefault";
+import AutocompleteDisabled from "./structures/autocompleteDisabled";
+import AutocompleteIcon from "./structures/autocompleteIcon";
+import AutocompleteOptions from "./structures/autocompleteOptions";
 
-export default function Banner() {
+export default function Autocomplete() {
   return (
     <>
       <bds-grid container xxs="12" justify-content="center" direction="column">
@@ -18,13 +23,13 @@ export default function Banner() {
           
           <bds-typo variant="fs-32" italic bold="extra-bold" margin="false">
             {/* Component name */}
-            Banner
+            Autocomplete
           </bds-typo>
           <bds-grid>
             <bds-grid padding="l-2">
               <bds-typo variant="fs-14">Status:</bds-typo>
             </bds-grid>
-            <bds-chip-tag color="success">Funcionando</bds-chip-tag>
+            <bds-chip-tag color="danger">Error</bds-chip-tag>
           </bds-grid>
         </bds-grid>
 
@@ -38,14 +43,19 @@ export default function Banner() {
         
         <bds-tab-panel group="tab1">
             {/* Import here the structures component */}
-            <BannerVariant />
-            <BannerClose />
-            <BannerLink />
-            <BannerContext />
+            <AutocompleteDefault />
+            <AutocompleteIcon />
+            <AutocompleteDisabled />
+            <AutocompleteOptions />
         </bds-tab-panel>
         <bds-tab-panel group="tab2">
             {/* Import here the Method component */}
-            <CloseEvent />
+            <BlurEvent />
+            <CancelEvent />
+            <ChangeEvent />
+            <FocusEvent />
+            <InputEvent />
+            <SelectedChangeEvent />
           </bds-tab-panel>
         
       </bds-grid>
