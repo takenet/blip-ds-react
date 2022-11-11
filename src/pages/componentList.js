@@ -10,7 +10,7 @@ export const data = {
   datasets: [
     {
       label: "My First Dataset",
-      data: [3, 36],
+      data: [5, 34],
       backgroundColor: ["rgb(33, 204, 121)", "rgb(255, 99, 132)"],
       hoverOffset: 4,
     },
@@ -22,7 +22,7 @@ export const status = {
   datasets: [
     {
       label: "My First Dataset",
-      data: [3, 1, 35],
+      data: [3, 2, 34],
       backgroundColor: ["rgb(33, 204, 121)", "rgb(255, 99, 132)", "rgb(255, 246, 168)" ],
       hoverOffset: 4,
     },
@@ -141,7 +141,7 @@ function ComponentList() {
           <Card  name="Accordion" link="accordion" status="success" statusText="Ok" />
           <Card name="Alert" link="alert" status="success" statusText="Ok" />
           <Card name="Autocomplete" link="autocomplete" status="danger" statusText="Problem identified" />
-          <Card name="Avatar" status="warning" statusText="Under Contruction" />
+          <Card name="Avatar" link="avatar" status="danger" statusText="Problem identified" />
           <Card name="Banner" link="banner" status="success" statusText="Ok" />
           <Card name="Button" status="warning" statusText="Under Contruction" />
           <Card name="Button Icon" status="warning" statusText="Under Contruction" />

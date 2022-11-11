@@ -1,11 +1,12 @@
 import React from "react";
 
-export default function AccordionDefault() {
+export default function AvatarDefault() {
   return (
     <bds-grid direction="column" xxs="12" gap="4" margin="y-8">
       <bds-grid xxs="12" direction="column">
         <bds-typo class="title-2" variant="fs-24" bold="bold">
           {/* Put here the component name */}
+          Avatar Default
         </bds-typo>
         <hr />
       </bds-grid>
@@ -22,7 +23,8 @@ export default function AccordionDefault() {
           <bds-typo variant="fs-14" bold="regular">
             <code>
               <pre>
-                {`<bds-component></bds-component>`}
+                {`<bds-avatar name="Michael Scott" size="standard" upload="false">
+</bds-avatar>`}
               </pre>
             </code>
           </bds-typo>
@@ -34,6 +36,9 @@ export default function AccordionDefault() {
         <bds-typo bold="bold">The component</bds-typo>
         <bds-paper>
            {/* Put here the component example */}
+           <bds-grid padding="2">
+            <bds-avatar name="Michael Scott" size="standard" upload="false"></bds-avatar>
+           </bds-grid>
         </bds-paper>
       </bds-grid>
       

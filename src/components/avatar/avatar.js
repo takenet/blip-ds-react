@@ -1,5 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ClickEvent from "./event/bdsClickAvatar";
+import ClickGroupEvent from "./event/bdsClickAvatarGroup";
+import AvatarDefault from "./structures/avatarDefault";
+import AvatarGroup from "./structures/avatarGroup";
+import AvatarSize from "./structures/avatarSize";
+import AvatarUpload from "./structures/avatarUpload";
 
 export default function Avatar() {
   return (
@@ -13,19 +19,19 @@ export default function Avatar() {
           
           <bds-typo variant="fs-32" italic bold="extra-bold" margin="false">
             {/* Component name */}
+            Avatar
           </bds-typo>
           <bds-grid>
             <bds-grid padding="l-2">
               <bds-typo variant="fs-14">Status:</bds-typo>
             </bds-grid>
-            <bds-chip-tag color="success">Funcionando</bds-chip-tag>
+            <bds-chip-tag color="danger">Error</bds-chip-tag>
           </bds-grid>
         </bds-grid>
 
         <bds-tabs align="left">
           <bds-tab group="tab1" label="Structures"></bds-tab>
-          <bds-tab group="tab2" label="Method"></bds-tab>
-          <bds-tab group="tab3" label="Event"></bds-tab>
+          <bds-tab group="tab2" label="Event"></bds-tab>
         </bds-tabs>
         <bds-grid xxs="11" margin="auto">
           <hr />
@@ -33,12 +39,15 @@ export default function Avatar() {
         
         <bds-tab-panel group="tab1">
             {/* Import here the structures component */}
+            <AvatarDefault />
+            <AvatarGroup />
+            <AvatarSize />
+            <AvatarUpload />
         </bds-tab-panel>
         <bds-tab-panel group="tab2">
             {/* Import here the Method component */}
-          </bds-tab-panel>
-          <bds-tab-panel group="tab3">
-            {/* Import here the Event component */}
+            <ClickEvent />
+            <ClickGroupEvent />
           </bds-tab-panel>
         
       </bds-grid>
