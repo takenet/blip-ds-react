@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/blip-ds-test-react/static/css/main.3190843d.css",
-    "main.js": "/blip-ds-test-react/static/js/main.2b9881c1.js",
+    "main.js": "/blip-ds-test-react/static/js/main.7ba484f6.js",
     "polyfills-dom.js": "/blip-ds-test-react/static/js/polyfills-dom.7b16586d.chunk.js",
     "polyfills-core-js.js": "/blip-ds-test-react/static/js/polyfills-core-js.adbde44c.chunk.js",
     "static/js/7123.0709e737.chunk.js": "/blip-ds-test-react/static/js/7123.0709e737.chunk.js",
@@ -78,10 +78,10 @@
     "static/js/4083.8ea61f0c.chunk.js": "/blip-ds-test-react/static/js/4083.8ea61f0c.chunk.js",
     "static/js/4302.2e3db3a9.chunk.js": "/blip-ds-test-react/static/js/4302.2e3db3a9.chunk.js",
     "static/js/4879.35823f3e.chunk.js": "/blip-ds-test-react/static/js/4879.35823f3e.chunk.js",
-    "static/media/ds-react.svg": "/blip-ds-test-react/static/media/ds-react.258a21f61498ff51587d2e2e0ffbf4d1.svg",
+    "static/media/ds-react.svg": "/blip-ds-test-react/static/media/ds-react.1b35cc78d79488a67b4d203f597aa9b8.svg",
     "index.html": "/blip-ds-test-react/index.html",
     "main.3190843d.css.map": "/blip-ds-test-react/static/css/main.3190843d.css.map",
-    "main.2b9881c1.js.map": "/blip-ds-test-react/static/js/main.2b9881c1.js.map",
+    "main.7ba484f6.js.map": "/blip-ds-test-react/static/js/main.7ba484f6.js.map",
     "polyfills-dom.7b16586d.chunk.js.map": "/blip-ds-test-react/static/js/polyfills-dom.7b16586d.chunk.js.map",
     "polyfills-core-js.adbde44c.chunk.js.map": "/blip-ds-test-react/static/js/polyfills-core-js.adbde44c.chunk.js.map",
     "7123.0709e737.chunk.js.map": "/blip-ds-test-react/static/js/7123.0709e737.chunk.js.map",
@@ -160,6 +160,6 @@
   },
   "entrypoints": [
     "static/css/main.3190843d.css",
-    "static/js/main.2b9881c1.js"
+    "static/js/main.7ba484f6.js"
   ]
 }
