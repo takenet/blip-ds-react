@@ -4,7 +4,8 @@ export default function GetInputElementMethod() {
 
   const inputGetInputElement = async (id) => {
     const input = document.getElementById(id);
-    await input.getInputElement();
+    const inputElement = await input.getInputElement()
+    input.value = inputElement;
   };
   return (
     <bds-grid
@@ -88,7 +89,8 @@ export default function GetInputElementMethod() {
                       <pre>
                         {`const inputGetInputElement = async (id) => {
   const input = document.getElementById(id);
-  await input.getInputElement();
+  const inputElement = await input.getInputElement()
+  input.value = inputElement;
 };`}
                       </pre>
                     </code>

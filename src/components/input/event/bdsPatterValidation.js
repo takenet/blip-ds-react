@@ -9,6 +9,7 @@ export default function BdsPatterValidation() {
   const [result, setResult] = useState('');
 
   const eventReturn = (event) => {
+    console.log('event', event);
     setResult(event.detail)
   }
 
@@ -59,7 +60,7 @@ export default function BdsPatterValidation() {
                 {/* <bds-banner id="banner" variant="system" button-close="true">
                   Instabilidade na plataforma? Não se preocupe, já estamos resolvendo!
                 </bds-banner> */}
-                <bds-input ref={elementRf} placeholder="nome completo"></bds-input>
+                <bds-input ref={elementRf} placeholder="nome completo" pattern="/^[0-9]*$/"></bds-input>
                 {result ? (
                   <motion.div
                   animate={{ x: 100 }}

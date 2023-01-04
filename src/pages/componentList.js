@@ -138,9 +138,9 @@ function ComponentList() {
           <bds-grid xxs="12">
             <bds-typo variant="fs-20" margin="false" bold="bold">Components List</bds-typo>
           </bds-grid>
-          <Card  name="Accordion" link="accordion" status="success" statusText="Ok" />
+          <Card name="Accordion" link="accordion" status="success" statusText="Ok" />
           <Card name="Alert" link="alert" status="success" statusText="Ok" />
-          <Card name="Autocomplete" link="autocomplete" status="success" statusText="Ok" />
+          <Card name="Autocomplete" link="autocomplete" status="danger" statusText="Problem identified" />
           <Card name="Avatar" link="avatar" status="danger" statusText="Problem identified" />
           <Card name="Banner" link="banner" status="success" statusText="Ok" />
           <Card name="Button" status="warning" statusText="Under Contruction" />
@@ -153,8 +153,8 @@ function ComponentList() {
           <Card name="Grid" status="warning" statusText="Under Contruction" />
           <Card name="Icon" status="warning" statusText="Under Contruction" />
           <Card name="Illustration" status="warning" statusText="Under Contruction" />
-          <Card name="Input" link="input" status="warning" statusText="Under Contruction" />
-          <Card name="Input Chips" status="success" statusText="Ok" />
+          <Card name="Input" link="input" status="danger" statusText="Problem identified" />
+          <Card name="Input Chips" status="warning" statusText="Under Contruction" />
           <Card name="Input Editable" status="warning" statusText="Under Contruction" />
           <Card name="Input Password" status="warning" statusText="Under Contruction" />
           <Card name="Input Phone Number" status="warning" statusText="Under Contruction" />

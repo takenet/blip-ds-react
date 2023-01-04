@@ -4,7 +4,8 @@ export default function IsValidMethod() {
 
   const inputIsValid = async (id) => {
     const input = document.getElementById(id);
-    await input.isValid();
+    const validResult = await input.isValid()
+    input.value = validResult;
   };
   return (
     <bds-grid
@@ -88,7 +89,8 @@ export default function IsValidMethod() {
                       <pre>
                         {`const inputIsValid = async (id) => {
   const input = document.getElementById(id);
-  await input.isValid();
+  const validResult = await input.isValid()
+  input.value = validResult;
 };`}
                       </pre>
                     </code>
