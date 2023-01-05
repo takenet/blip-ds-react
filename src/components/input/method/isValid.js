@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import {motion} from 'framer-motion';
 
 export default function IsValidMethod() {
+  const [result, setResult] = useState('');
 
   const inputIsValid = async (id) => {
     const input = document.getElementById(id);
     const validResult = await input.isValid()
-    input.value = validResult;
+    setResult(validResult)
   };
   return (
     <bds-grid
@@ -62,6 +64,18 @@ export default function IsValidMethod() {
               </bds-grid>
               <bds-input id="inputIsValid" value="Lorem ipsum"></bds-input>
             </bds-paper>
+            {result ? (
+              <motion.div
+                animate={{ x: 100 }}
+                transition={{ ease: "easeOut", duration: 2 }}
+              >
+                <bds-paper>
+                  <bds-grid padding="2" justify-content="center">
+                    <bds-typo>{`This is the value when the input is valid "${result}"`}</bds-typo>
+                  </bds-grid>
+                </bds-paper>
+              </motion.div>
+              ) : ''}
 
             <bds-grid direction="column" gap="1">
               <bds-typo bold="bold">The call</bds-typo>
@@ -90,7 +104,7 @@ export default function IsValidMethod() {
                         {`const inputIsValid = async (id) => {
   const input = document.getElementById(id);
   const validResult = await input.isValid()
-  input.value = validResult;
+  setResult(validResult)
 };`}
                       </pre>
                     </code>

@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import {motion} from 'framer-motion';
 
 export default function GetInputElementMethod() {
+  const [result, setResult] = useState('');
 
   const inputGetInputElement = async (id) => {
     const input = document.getElementById(id);
     const inputElement = await input.getInputElement()
-    input.value = inputElement;
+    setResult(inputElement)
   };
   return (
     <bds-grid
@@ -62,6 +64,18 @@ export default function GetInputElementMethod() {
               </bds-grid>
               <bds-input id="inputGetInputElement" value="Lorem ipsum"></bds-input>
             </bds-paper>
+            {result ? (
+              <motion.div
+                animate={{ x: 100 }}
+                transition={{ ease: "easeOut", duration: 2 }}
+              >
+                <bds-paper>
+                  <bds-grid padding="2" justify-content="center">
+                    <bds-typo>{`this is the value of the referenced input element "${result}"`}</bds-typo>
+                  </bds-grid>
+                </bds-paper>
+              </motion.div>
+              ) : ''}
 
             <bds-grid direction="column" gap="1">
               <bds-typo bold="bold">The call</bds-typo>
