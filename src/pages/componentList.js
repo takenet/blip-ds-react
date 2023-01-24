@@ -143,8 +143,8 @@ function ComponentList() {
           <Card name="Autocomplete" link="autocomplete" status="danger" statusText="Problem identified" />
           <Card name="Avatar" link="avatar" status="danger" statusText="Problem identified" />
           <Card name="Banner" link="banner" status="success" statusText="Ok" />
-          <Card name="Button" status="warning" statusText="Under Contruction" />
-          <Card name="Button Icon" status="warning" statusText="Under Contruction" />
+          <Card name="Button" link="button" status="success" statusText="Ok" />
+          <Card name="Button Icon" link="button-icon" status="success" statusText="Ok" />
           <Card name="Chip Tag" status="warning" statusText="Under Contruction" />
           <Card name="Chip Clickable" status="warning" statusText="Under Contruction" />
           <Card name="Chip Selected" status="warning" statusText="Under Contruction" />

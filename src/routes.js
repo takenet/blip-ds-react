@@ -6,8 +6,10 @@ import Accordion from "./components/accordion/Accordion";
 import Alert from "./components/alert/alert";
 import Autocomplete from "./components/autocomplete/autocomplete";
 import Avatar from "./components/avatar/avatar";
-import Banner from "./components/Banner/banner";
+import Banner from "./components/banner/banner";
 import Input from "./components/input/input";
+import Button from "./components/button/button";
+import ButtonIcon from "./components/buttonIcon/buttonIcon";
 
 function ComponentRoutes() {
   return (
@@ -19,6 +21,8 @@ function ComponentRoutes() {
         <Route path="/avatar" element={<Avatar />} />
         <Route path="/banner" element={<Banner />} />
         <Route path="/input" element={<Input />} />
+        <Route path="/button" element={<Button />} />
+        <Route path="/button-icon" element={<ButtonIcon />} />
       </Routes>
   );
 };
