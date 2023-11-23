@@ -1,0 +1,23 @@
+@import "~blip-ds/dist/collection/styles/_colors.scss";
+a {
+  text-decoration: none;
+}
+.logo-brand {
+  position: absolute;
+  left: 48px;
+  top: 48px;
+  height: 32px;
+}
+
+.aside {
+  background: url(../../assets/image.svg) no-repeat;
+  background-size: cover;
+}
+@media (max-width: 900px) {
+  .body {
+    width: 100%;
+  }
+  .aside {
+    display: none;
+  }
+}
