@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkblip_screen_templates=self.webpackChunkblip_screen_templates||[]).push([[8970],{8970:(n,t,e)=>{e.r(t),e.d(t,{bds_expansion_panel:()=>l});var s=e(6510),l=function(){function n(n){(0,s.r)(this,n)}return n.prototype.render=function(){return(0,s.h)(s.H,null,(0,s.h)("slot",null))},n}();l.style="*{-webkit-transition:all 0.5s;-moz-transition:all 0.5s;transition:all 0.5s}:host{display:block}"}}]);
+//# sourceMappingURL=8970.d6f3d68d.chunk.js.map

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkblip_screen_templates=self.webpackChunkblip_screen_templates||[]).push([[6902],{6902:(t,e,r)=>{r.r(e),r.d(e,{bds_card_subtitle:()=>n});var s=r(6510),n=function(){function t(t){(0,s.r)(this,t),this.text=void 0}return t.prototype.render=function(){return(0,s.h)("bds-typo",{variant:"fs-12",tag:"p",bold:"regular",margin:!1},this.text)},t}()}}]);
+//# sourceMappingURL=6902.56821104.chunk.js.map
