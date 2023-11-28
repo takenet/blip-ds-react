@@ -1,5 +1,6 @@
 {
   "name": "blip-screen-templates",
+  "homepage": "https://takenet.github.io/blip-screen-templates",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,11 +15,14 @@
     "sass": "^1.69.5",
     "web-vitals": "^2.1.4"
   },
+  
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -37,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.0"
   }
 }
