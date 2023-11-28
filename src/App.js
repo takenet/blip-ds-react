@@ -1,13 +1,10 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
-import Login from "./pages/login/login";
+import MainRoutes from "./routes";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Login />} />
-    </Routes>
-  ) 
+       <MainRoutes />
+  );
 }
 
 export default App;

@@ -1,6 +1,5 @@
 {
   "name": "blip-screen-templates",
-  "homepage": "https://takenet.github.io/blip-screen-templates",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,7 +14,7 @@
     "sass": "^1.69.5",
     "web-vitals": "^2.1.4"
   },
-  
+   "homepage": "https://takenet.github.io/blip-screen-templates",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

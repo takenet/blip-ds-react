@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.scss";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 class Login extends React.Component {
   render() {
@@ -57,6 +57,7 @@ class Login extends React.Component {
           </bds-grid>
         </bds-grid>
         <bds-grid height="100%" class="aside" xxs="6"></bds-grid>
+        <Outlet />
       </bds-grid>
     );
   }
