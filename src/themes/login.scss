@@ -9,8 +9,12 @@ a {
   height: 32px;
 }
 
+.login-page {
+  background-color: $color-surface-1;
+}
+
 .aside {
-  background: url(../../assets/image.svg) no-repeat;
+  background: url(../assets/image.svg) no-repeat;
   background-size: cover;
 }
 @media (max-width: 900px) {

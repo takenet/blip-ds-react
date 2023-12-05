@@ -1,0 +1,29 @@
+@import "~blip-ds/dist/collection/styles/_colors.scss";
+
+.illustration-bot {
+  height: 160px;
+}
+
+.card-initial-config {
+  display: flex;
+
+  &-body {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    .icon-card {
+      color: $color-brand;
+    }
+  }
+}
+
+.divisor {
+  width: 100%;
+  height: 1px;
+  background-color: $color-border-2;
+}
+
+.card-chatbot-body {
+  display: flex;
+}
