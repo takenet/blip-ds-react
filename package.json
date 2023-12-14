@@ -15,7 +15,7 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "babel-loader": "^8.2.5",
-    "blip-ds": "file:../blip-ds",
+    "blip-ds": "1.271.0",
     "blip-tokens": "^1.74.0",
     "css-loader": "^6.7.1",
     "eslint": "^8.17.0",
@@ -60,8 +60,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/styled-components": "^5.1.25"
   }
 }
