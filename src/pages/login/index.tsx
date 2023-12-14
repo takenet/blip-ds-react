@@ -1,37 +1,38 @@
+import { BdsButton, BdsGrid, BdsTypo } from 'blip-ds/dist/blip-ds-react/components';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (
     <>
-      <bds-typo margin={false} tag="h1" variant="fs-40" bold="bold">
+      <BdsTypo margin={false} tag="h1" variant="fs-40" bold="bold">
         Bom dia!
-      </bds-typo>
-      <bds-typo tag="h4" variant="fs-16">
+      </BdsTypo>
+      <BdsTypo tag="h4" variant="fs-16">
         Para começar, faça o login na sua conta:
-      </bds-typo>
-      <bds-button icon="google" type-icon="logo" variant="tertiary">
+      </BdsTypo>
+      <BdsButton icon="google" type-icon="logo" variant="tertiary">
         Login com o Google
-      </bds-button>
-      <bds-typo>ou</bds-typo>
-      <bds-grid gap="2" direction="column" class="inputs">
+      </BdsButton>
+      <BdsTypo>ou</BdsTypo>
+      <BdsGrid gap="2" direction="column" class="inputs">
         <bds-input placeholder="Insira aqui seu e-mail" label="E-mail"></bds-input>
         <bds-input placeholder="Insira aqui sua senha" label="Senha"></bds-input>
-      </bds-grid>
-      <bds-grid justify-content="flex-end">
+      </BdsGrid>
+      <BdsGrid justify-content="flex-end">
         <Link to="/" className="forgot-password">
-          <bds-typo variant="fs-14" bold="bold">
+          <BdsTypo variant="fs-14" bold="bold">
             Esqueceu sua senha?
-          </bds-typo>
+          </BdsTypo>
         </Link>
-      </bds-grid>
+      </BdsGrid>
 
-      <bds-grid direction="row" justify-content="space-between" class="actions">
-        <bds-button variant="tertiary">Cadastra-se grátis</bds-button>
+      <BdsGrid direction="row" justify-content="space-between" class="actions">
+        <BdsButton variant="tertiary">Cadastra-se grátis</BdsButton>
         <Link to="/">
-          <bds-button>Entrar</bds-button>
+          <BdsButton>Entrar</BdsButton>
         </Link>
-      </bds-grid>
+      </BdsGrid>
     </>
   );
 };

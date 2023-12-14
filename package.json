@@ -1,5 +1,5 @@
 {
-  "name": "blip-react-ts",
+  "name": "blip-screen-templates",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,14 +16,13 @@
     "@types/react-dom": "^18.0.6",
     "babel-loader": "^8.2.5",
     "blip-ds": "1.271.0",
-    "blip-tokens": "^1.74.0",
     "css-loader": "^6.7.1",
     "eslint": "^8.17.0",
-    "eslint-config-prettier": "^8.5.0",
+"eslint-config-prettier": "^8.5.0",
     "eslint-config-standard-with-typescript": "^16.0.0",
-    "eslint-plugin-prettier": "^4.0.0",
+"eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
-    "prettier": "^2.6.2",
+"prettier": "^2.6.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.2",
@@ -31,17 +30,19 @@
     "sass": "^1.53.0",
     "sass-loader": "^13.0.2",
     "style-loader": "^3.3.1",
-    "styled-components": "^5.3.5",
     "typescript": "^4.7.4",
     "web-vitals": "^2.1.4",
     "webpack": "^5.75.0",
     "webpack-cli": "^4.10.0"
   },
+  "homepage": "https://takenet.github.io/blip-screen-templates",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -60,5 +61,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.0"
   }
 }

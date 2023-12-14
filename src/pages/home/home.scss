@@ -8,10 +8,6 @@
   display: flex;
 
   &-body {
-    display: flex;
-    align-items: center;
-    height: 100%;
-
     .icon-card {
       color: $color-brand;
     }

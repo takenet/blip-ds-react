@@ -5,8 +5,10 @@ import {
   BdsButton,
   BdsCard,
   BdsCardBody,
+  BdsGrid,
   BdsIcon,
   BdsIllustration,
+  BdsPaper,
   BdsTypo,
 } from 'blip-ds/dist/blip-ds-react/components';
 
@@ -32,83 +34,83 @@ const data = [
 const Home = () => {
   return (
     <>
-      <bds-grid margin="y-4" container container-fluid flex-wrap="wrap">
-        <bds-grid xxs="12" xs="12" sm="12" md="12" lg="12" xg="12" margin="y-2" direction="column">
-          <bds-paper class="w-100">
-            <bds-grid margin="y-4" container container-fluid align-items="center" flex-wrap="wrap">
-              <bds-grid xxs="12" xs="12" sm="12" md="3" lg="3" xg="3" margin="y-2" direction="column" padding="x-6">
+      <BdsGrid margin="y-4" container container-fluid flex-wrap="wrap">
+        <BdsGrid xxs="12" xs="12" sm="12" md="12" lg="12" xg="12" margin="y-2" direction="column">
+          <BdsPaper class="w-100">
+            <BdsGrid margin="y-4" container container-fluid align-items="center" flex-wrap="wrap">
+              <BdsGrid xxs="12" xs="12" sm="12" md="3" lg="3" xg="3" margin="y-2" direction="column" padding="x-6">
                 <BdsIllustration type="blip-solid" name="agent" class="illustration-bot"></BdsIllustration>
-              </bds-grid>
-              <bds-grid xxs="12" xs="12" sm="12" md="9" lg="9" xg="9" margin="y-2" direction="column">
-                <bds-grid direction="column" padding="none" margin="b-2">
+              </BdsGrid>
+              <BdsGrid xxs="12" xs="12" sm="12" md="9" lg="9" xg="9" margin="y-2" direction="column">
+                <BdsGrid direction="column" padding="none" margin="b-2">
                   <BdsTypo variant="fs-16" bold="bold">
                     Olá Thiago
                   </BdsTypo>
                   <BdsTypo variant="fs-16">
                     Para começar a sua jornada, que tal criar seu primeiro contato inteligênte?
                   </BdsTypo>
-                </bds-grid>
+                </BdsGrid>
                 <BdsButton icon="message-ballon" variant="tertiary">
                   Criar chatbot
                 </BdsButton>
-              </bds-grid>
-            </bds-grid>
-          </bds-paper>
-        </bds-grid>
-        <bds-grid xxs="12" xs="12" sm="12" md="4" lg="4" xg="4" margin="y-2" direction="column">
-          <BdsCard clickable height="160px" width="100%" class="card-initial-config">
+              </BdsGrid>
+            </BdsGrid>
+          </BdsPaper>
+        </BdsGrid>
+        <BdsGrid xxs="12" xs="12" sm="12" md="4" lg="4" xg="4" margin="y-2" direction="column">
+          <BdsCard clickable width="100%" class="card-initial-config">
             <BdsCardBody class="card-initial-config-body">
-              <bds-grid container container-fluid align-items="center" flex-wrap="wrap">
-                <bds-grid xxs="3" xs="3" sm="2" md="2" lg="2" xg="2" justify-content="center">
+              <BdsGrid container container-fluid height="160px" align-items="center" flex-wrap="wrap">
+                <BdsGrid xxs="3" xs="3" sm="2" md="2" lg="2" xg="2" justify-content="center">
                   <BdsIcon theme="outline" name="business" size="x-large" class="icon-card"></BdsIcon>
-                </bds-grid>
-                <bds-grid xxs="9" xs="9" sm="10" md="10" lg="10" xg="10" margin="y-2" direction="column">
+                </BdsGrid>
+                <BdsGrid xxs="9" xs="9" sm="10" md="10" lg="10" xg="10" margin="y-2" direction="column">
                   <BdsTypo variant="fs-16" bold="bold">
                     Painel de contrato
                   </BdsTypo>
                   <BdsTypo variant="fs-16">Gerencie membros e informações importantes do seu contrato.</BdsTypo>
-                </bds-grid>
-              </bds-grid>
+                </BdsGrid>
+              </BdsGrid>
             </BdsCardBody>
           </BdsCard>
-        </bds-grid>
-        <bds-grid xxs="12" xs="12" sm="12" md="4" lg="4" xg="4" margin="y-2" direction="column">
-          <BdsCard clickable height="160px" width="100%" class="card-initial-config">
+        </BdsGrid>
+        <BdsGrid xxs="12" xs="12" sm="12" md="4" lg="4" xg="4" margin="y-2" direction="column">
+          <BdsCard clickable width="100%" class="card-initial-config">
             <BdsCardBody class="card-initial-config-body">
-              <bds-grid container container-fluid align-items="center" flex-wrap="wrap">
-                <bds-grid xxs="3" xs="3" sm="2" md="2" lg="2" xg="2" justify-content="center">
+              <BdsGrid container container-fluid height="160px" align-items="center" flex-wrap="wrap">
+                <BdsGrid xxs="3" xs="3" sm="2" md="2" lg="2" xg="2" justify-content="center">
                   <BdsIcon theme="outline" name="builder-publish-bot" size="x-large" class="icon-card"></BdsIcon>
-                </bds-grid>
-                <bds-grid xxs="9" xs="9" sm="10" md="10" lg="10" xg="10" margin="y-2" direction="column">
+                </BdsGrid>
+                <BdsGrid xxs="9" xs="9" sm="10" md="10" lg="10" xg="10" margin="y-2" direction="column">
                   <BdsTypo variant="fs-16" bold="bold">
                     Aprenda a utilizar o Blip
                   </BdsTypo>
                   <BdsTypo variant="fs-16">
                     Conheça nossos conteúdos e aprenda a utilizar o máximo da plataforma
                   </BdsTypo>
-                </bds-grid>
-              </bds-grid>
+                </BdsGrid>
+              </BdsGrid>
             </BdsCardBody>
           </BdsCard>
-        </bds-grid>
-        <bds-grid xxs="12" xs="12" sm="12" md="4" lg="4" xg="4" margin="y-2" direction="column">
-          <BdsCard clickable height="160px" width="100%" class="card-initial-config">
+        </BdsGrid>
+        <BdsGrid xxs="12" xs="12" sm="12" md="4" lg="4" xg="4" margin="y-2" direction="column">
+          <BdsCard clickable width="100%" class="card-initial-config">
             <BdsCardBody class="card-initial-config-body">
-              <bds-grid container container-fluid align-items="center" flex-wrap="wrap">
-                <bds-grid xxs="3" xs="3" sm="2" md="2" lg="2" xg="2" justify-content="center">
+              <BdsGrid container container-fluid height="160px" align-items="center" flex-wrap="wrap">
+                <BdsGrid xxs="3" xs="3" sm="2" md="2" lg="2" xg="2" justify-content="center">
                   <BdsIcon theme="outline" name="question" size="x-large" class="icon-card"></BdsIcon>
-                </bds-grid>
-                <bds-grid xxs="9" xs="9" sm="10" md="10" lg="10" xg="10" margin="y-2" direction="column">
+                </BdsGrid>
+                <BdsGrid xxs="9" xs="9" sm="10" md="10" lg="10" xg="10" margin="y-2" direction="column">
                   <BdsTypo variant="fs-16" bold="bold">
                     Tire suas dúvidas com a Blip Community
                   </BdsTypo>
                   <BdsTypo variant="fs-16">Potencialize seus resultados com os nossos conteúdos.</BdsTypo>
-                </bds-grid>
-              </bds-grid>
+                </BdsGrid>
+              </BdsGrid>
             </BdsCardBody>
           </BdsCard>
-        </bds-grid>
-        <bds-grid
+        </BdsGrid>
+        <BdsGrid
           xxs="12"
           xs="12"
           sm="12"
@@ -118,23 +120,24 @@ const Home = () => {
           margin="t-2"
           justify-content="space-between"
           align-items="center"
-        ></bds-grid>
-        <bds-grid xxs="12" margin="y-2" justify-content="space-between" align-items="center">
+        ></BdsGrid>
+        <BdsGrid xxs="12" margin="y-2" justify-content="space-between" align-items="center">
           <BdsTypo variant="fs-20" bold="bold" margin={false}>
             Chatbotss em Contrato 1
           </BdsTypo>
           <BdsButton icon="message-sent" variant="tertiary">
             Criar Chatbot
           </BdsButton>
-        </bds-grid>
-        <bds-grid xxs="12" margin="b-4" justify-content="space-between" align-items="center">
+        </BdsGrid>
+        <BdsGrid xxs="12" margin="b-4" justify-content="space-between" align-items="center">
           <div className="divisor"></div>
-        </bds-grid>
+        </BdsGrid>
         {data.map((item, index) => (
-          <bds-grid xxs="12" xs="12" sm="3" md="3" lg="2" xg="2" margin="y-2" direction="column">
-            <BdsCard clickable height="160px" width="100%" class="card-chatbot-body">
+          <BdsGrid key={index} xxs="12" xs="12" sm="3" md="3" lg="2" xg="2" margin="y-2" direction="column">
+            <BdsCard clickable width="100%" class="card-chatbot-body">
               <BdsCardBody>
-                <bds-grid
+                <BdsGrid
+                  height="160px"
                   align-items="center"
                   padding="y-2"
                   direction="column"
@@ -149,13 +152,13 @@ const Home = () => {
                   <BdsTypo variant="fs-12" margin={false}>
                     {item.type}
                   </BdsTypo>
-                </bds-grid>
+                </BdsGrid>
               </BdsCardBody>
             </BdsCard>
-          </bds-grid>
+          </BdsGrid>
         ))}
         ;
-      </bds-grid>
+      </BdsGrid>
     </>
   );
 };
