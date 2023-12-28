@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkblip_screen_templates=self.webpackChunkblip_screen_templates||[]).push([[6782],{6782:(e,t,n)=>{n.r(t),n.d(t,{bds_card_header:()=>r});var s=n(6510),r=function(){function e(e){(0,s.r)(this,e),this.align="space-between"}return e.prototype.render=function(){return(0,s.h)("bds-grid",{xxs:"12",direction:"row",gap:"1",justifyContent:this.align,alignItems:"center"},(0,s.h)("slot",null))},e}();r.style=""}}]);
-//# sourceMappingURL=6782.121ff5a2.chunk.js.map
