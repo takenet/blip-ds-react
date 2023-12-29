@@ -29,7 +29,7 @@ const Login = () => {
 
       <BdsGrid direction="row" justify-content="space-between" class="actions">
         <BdsButton variant="tertiary">Cadastra-se grátis</BdsButton>
-        <Link to="/">
+        <Link to="/home">
           <BdsButton>Entrar</BdsButton>
         </Link>
       </BdsGrid>

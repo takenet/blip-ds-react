@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './home.scss';
 import {
   BdsAvatar,
@@ -134,27 +135,29 @@ const Home = () => {
         </BdsGrid>
         {data.map((item, index) => (
           <BdsGrid key={index} xxs="12" xs="12" sm="3" md="3" lg="2" xg="2" margin="y-2" direction="column">
-            <BdsCard clickable width="100%" class="card-chatbot-body">
-              <BdsCardBody>
-                <BdsGrid
-                  height="160px"
-                  align-items="center"
-                  padding="y-2"
-                  direction="column"
-                  gap="1"
-                  justify-content="center"
-                  xxs="12"
-                >
-                  <BdsAvatar name={item.name} size="extra-large" />
-                  <BdsTypo variant="fs-16" bold="bold" margin={false}>
-                    {item.name}
-                  </BdsTypo>
-                  <BdsTypo variant="fs-12" margin={false}>
-                    {item.type}
-                  </BdsTypo>
-                </BdsGrid>
-              </BdsCardBody>
-            </BdsCard>
+            <Link to="/home-chatbot">
+              <BdsCard clickable width="100%" class="card-chatbot-body">
+                <BdsCardBody>
+                  <BdsGrid
+                    height="160px"
+                    align-items="center"
+                    padding="y-2"
+                    direction="column"
+                    gap="1"
+                    justify-content="center"
+                    xxs="12"
+                  >
+                    <BdsAvatar name={item.name} size="extra-large" />
+                    <BdsTypo variant="fs-16" bold="bold" margin={false}>
+                      {item.name}
+                    </BdsTypo>
+                    <BdsTypo variant="fs-12" margin={false}>
+                      {item.type}
+                    </BdsTypo>
+                  </BdsGrid>
+                </BdsCardBody>
+              </BdsCard>
+            </Link>
           </BdsGrid>
         ))}
         ;
