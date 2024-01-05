@@ -1,0 +1,22 @@
+@import "~blip-ds/dist/collection/styles/_colors.scss";
+
+.home-chatbot, .actions-port {
+  gap: 1rem;
+}
+
+.bot-date {
+  display: none;
+}
+
+@media (min-width: 600px) {}
+@media (min-width: 905px) {
+.home-chatbot, .actions-port {
+  gap: 0;
+}
+.bot-date {
+  display: flex;
+}
+}
+@media (min-width: 993px) {}
+@media (min-width: 1601px) {}
+@media (min-width: 1921px) {}

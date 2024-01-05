@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import './portal.scss';
 import { Props } from './theme-interface';
 import {
@@ -6,6 +7,7 @@ import {
   BdsButton,
   BdsButtonIcon,
   BdsDropdown,
+  BdsGrid,
   BdsIcon,
   BdsIllustration,
   BdsList,
@@ -17,6 +19,8 @@ import {
 } from 'blip-ds/dist/blip-ds-react/components';
 
 const Portal = (props: Props) => {
+  const location = useLocation();
+  console.log(location.pathname);
   return (
     <bds-grid height="100%" xxs="12" direction="column">
       <BdsThemeProvider theme="dark" class="header">
@@ -67,26 +71,88 @@ const Portal = (props: Props) => {
           </BdsNavbarContent>
         </BdsNavbar>
       </BdsThemeProvider>
-      <bds-grid height="fit-content" xxs="12" direction="column" class="work-contract">
-        <bds-grid container container-fluid>
-          <bds-grid height="100%" xxs="12" direction="column">
-            <BdsNavbar orientation="horizontal" justifyContent="space-between">
-              <BdsNavbarContent>
-                <bds-typo variant="fs-20" bold="bold" margin={false}>
-                  Espaço de trabalho de Contrato 1
-                </bds-typo>
-              </BdsNavbarContent>
-              <BdsNavbarContent>
-                <BdsIcon theme="outline" name="search" size="medium"></BdsIcon>
-                <BdsButton icon="message-sent" variant="tertiary">
-                  Criar Roteador
-                </BdsButton>
-                <BdsButton icon="message-ballon"> Criar Chatbot </BdsButton>
-              </BdsNavbarContent>
-            </BdsNavbar>
+      {location.pathname === "/home-chatbot" &&
+        <BdsThemeProvider theme="dark" class="nav-chatbot">
+          <bds-grid height="fit-content" xxs="12" direction="column" class="work-contract">
+            <bds-grid container container-fluid>
+              <bds-grid height="100%" xxs="12" direction="column">
+                <BdsNavbar orientation="horizontal" justifyContent="space-between">
+                  <BdsNavbarContent>
+                    <BdsDropdown class="contract-maneger" position="bottom-right">
+                      <bds-grid slot="dropdown-activator">
+                        <BdsListItem clickable text="Bot Name" avatarName="Bot Name" secondaryText="Standard">
+                          <bds-grid slot="action-area">
+                            <bds-button-icon icon="arrow-down" size="short" variant="secondary" />
+                          </bds-grid>
+                        </BdsListItem>
+                      </bds-grid>
+                      <bds-grid slot="dropdown-content">
+                        <BdsList type-list="default">
+                          <BdsListItem clickable value="01">
+                            <bds-list-item-content>
+                              <bds-typo>Contrato 1</bds-typo>
+                            </bds-list-item-content>
+                          </BdsListItem>
+                          <BdsListItem clickable value="01">
+                            <bds-list-item-content>
+                              <bds-typo>Contrato 2</bds-typo>
+                            </bds-list-item-content>
+                          </BdsListItem>
+                          <BdsListItem clickable value="01">
+                            <bds-list-item-content>
+                              <bds-typo>Contrato 3</bds-typo>
+                            </bds-list-item-content>
+                          </BdsListItem>
+                        </BdsList>
+                      </bds-grid>
+                    </BdsDropdown>
+                  </BdsNavbarContent>
+                  <BdsNavbarContent>
+                    <BdsGrid gap="4" padding="none">
+                      <BdsTypo margin={false}>Builder</BdsTypo>
+                      <BdsTypo margin={false}>Atendimento</BdsTypo>
+                      <BdsTypo margin={false}>Análise</BdsTypo>
+                      <BdsTypo margin={false}>Growth</BdsTypo>
+                      <BdsTypo margin={false}>Canais</BdsTypo>
+                      <BdsIcon theme="outline" name="more-options-horizontal" size="medium"></BdsIcon>
+                    </BdsGrid>
+                  </BdsNavbarContent>
+                  <BdsNavbarContent>
+                    <BdsGrid gap="2" padding="none">
+                      <BdsIcon theme="outline" name="integration" size="medium"></BdsIcon>
+                      <BdsIcon theme="outline" name="settings-general" size="medium"></BdsIcon>
+                      <BdsIcon theme="outline" name="team" size="medium"></BdsIcon>
+                      <BdsIcon theme="outline" name="builder-test-bot" size="medium"></BdsIcon>
+                    </BdsGrid>
+                  </BdsNavbarContent>
+                </BdsNavbar>
+              </bds-grid>
+            </bds-grid>
+          </bds-grid>
+        </BdsThemeProvider>
+      }
+      {location.pathname === "/home" &&
+        <bds-grid height="fit-content" xxs="12" direction="column" class="work-contract">
+          <bds-grid container container-fluid>
+            <bds-grid height="100%" xxs="12" direction="column">
+              <BdsNavbar orientation="horizontal" justifyContent="space-between">
+                <BdsNavbarContent>
+                  <bds-typo variant="fs-20" bold="bold" margin={false}>
+                    Espaço de trabalho de Contrato 1
+                  </bds-typo>
+                </BdsNavbarContent>
+                <BdsNavbarContent>
+                  <BdsIcon theme="outline" name="search" size="medium"></BdsIcon>
+                  <BdsButton icon="message-sent" variant="tertiary">
+                    Criar Roteador
+                  </BdsButton>
+                  <BdsButton icon="message-ballon"> Criar Chatbot </BdsButton>
+                </BdsNavbarContent>
+              </BdsNavbar>
+            </bds-grid>
           </bds-grid>
         </bds-grid>
-      </bds-grid>
+      }
       <bds-grid height="100%" xxs="12" direction="column" class="content">
         {props.slot}
         <bds-grid margin="y-4" container container-fluid flex-wrap="wrap" class="footer">

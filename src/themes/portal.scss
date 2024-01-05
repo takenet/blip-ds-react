@@ -51,6 +51,14 @@
   }
 }
 
+.nav-chatbot {
+  display: none;
+  position: relative;
+  height: fit-content;
+  width: 100%;
+  background-color: $color-surface-3;
+}
+
 .work-contract {
   display: none;
   background-color: $color-surface-1;
@@ -84,7 +92,7 @@
       display: block;
     }
   }
-  .work-contract {
+  .work-contract, .nav-chatbot {
     display: block;
   }
 }
