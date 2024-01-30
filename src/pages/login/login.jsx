@@ -1,12 +1,13 @@
 import React from "react";
 import "./style.scss";
 import { Link, Outlet } from "react-router-dom";
+import { project_656489f80b5e8dc83b61551a as dito } from "../../ditto";
 
 class Login extends React.Component {
   render() {
     return (
       <bds-grid xxs="12" direction="row" height="100%">
-        <bds-grid xxs="12" md="6" justify-content="center" align-items="center">
+        <bds-grid class="form_space" xxs="12" md="6" justify-content="center" align-items="center">
           <bds-grid height="100%">
             <bds-illustration
               class="logo-brand"
@@ -15,31 +16,31 @@ class Login extends React.Component {
               alt="logo take blip"
             ></bds-illustration>
           </bds-grid>
-          <bds-grid gap="2" xxs="10" direction="column">
+          <bds-grid gap="2" xxs="10" xs="6" md-offset="1" md="6"  direction="column">
             <bds-typo margin="false" tag="h1" variant="fs-40" bold="bold">
-              Bom dia!
+              {dito.base.bomdia}
             </bds-typo>
             <bds-typo tag="h4" variant="fs-16">
-              Para começar, faça o login na sua conta:
+              {dito.base.paracomecarfacaologinnasuaconta}
             </bds-typo>
             <bds-button icon="google" type-icon="logo" variant="tertiary">
-              Login com o Google
+              {dito.base.logincomogoogle}
             </bds-button>
-            <bds-typo>ou</bds-typo>
+            <bds-typo>{dito.base.ou}</bds-typo>
             <bds-grid gap="2" direction="column" className="inputs">
               <bds-input
-                placeholder="Insira aqui seu e-mail"
-                label="E-mail"
+                placeholder={dito.base.insiraaquioseue_mail}
+                label={dito.base.e_mail}
               ></bds-input>
               <bds-input
-                placeholder="Insira aqui sua senha"
-                label="Senha"
+                placeholder={dito.base.insiraaquisuasenha}
+                label={dito.base.senha}
               ></bds-input>
             </bds-grid>
             <bds-grid justify-content="flex-end">
               <Link to="/" className="forgot-password">
                 <bds-typo variant="fs-14" bold="bold">
-                  Esqueceu sua senha?
+                {dito.base.esqueceusuasenha}
                 </bds-typo>
               </Link>
             </bds-grid>
@@ -49,9 +50,9 @@ class Login extends React.Component {
               justify-content="space-between"
               className="actions"
             >
-              <bds-button variant="tertiary">Cadastra-se grátis</bds-button>
+              <bds-button variant="tertiary">{dito.base.cadastre_segratis}</bds-button>
               <Link to="/main/chatbot">
-                <bds-button>Entrar</bds-button>
+                <bds-button>{dito.base.login}</bds-button>
               </Link>
             </bds-grid>
           </bds-grid>

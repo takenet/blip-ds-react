@@ -7,6 +7,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "blip-ds": "^1.269.0",
+    "ditto-react": "^1.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.19.0",
@@ -14,14 +15,15 @@
     "sass": "^1.69.5",
     "web-vitals": "^2.1.4"
   },
-   "homepage": "https://takenet.github.io/blip-screen-templates",
+  "homepage": "https://takenet.github.io/blip-screen-templates",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "ditto:pull": "cd src && ditto-cli pull"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "@dittowords/cli": "^4.2.1",
     "gh-pages": "^6.1.0"
   }
 }
