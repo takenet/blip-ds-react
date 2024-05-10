@@ -11,7 +11,7 @@ const browserTheme = window.matchMedia('(prefers-color-scheme: dark)');
 const App = () => {
   const location = useLocation();
   return (
-    <BdsThemeProvider theme={browserTheme.matches ? 'dark' : 'light'} class="provider-global">
+    <BdsThemeProvider theme={browserTheme.matches ? 'light' : 'dark'} class="provider-global">
       <Theme theme={location.pathname.replace('/', '') as themes} slot={<AppRoutes />}></Theme>
     </BdsThemeProvider>
   );

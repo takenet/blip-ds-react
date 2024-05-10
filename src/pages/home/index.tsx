@@ -18,18 +18,6 @@ const data = [
   { name: 'Nome do Chatbot', value: 2, type: 'Roteador' },
   { name: 'Nome do Chatbot', value: 3, type: 'Builder' },
   { name: 'Nome do Chatbot', value: 4, type: 'Builder' },
-  { name: 'Nome do Chatbot', value: 5, type: 'Builder' },
-  { name: 'Nome do Chatbot', value: 6, type: 'Builder' },
-  { name: 'Nome do Chatbot', value: 7, type: 'Builder' },
-  { name: 'Nome do Chatbot', value: 8, type: 'Builder' },
-  { name: 'Nome do Chatbot', value: 9, type: 'Builder' },
-  { name: 'Nome do Chatbot', value: 10, type: 'Builder' },
-  { name: 'Nome do Chatbot', value: 11, type: 'Builder' },
-  { name: 'Nome do Chatbot', value: 12, type: 'Builder' },
-  { name: 'Nome do Chatbot', value: 13, type: 'Builder' },
-  { name: 'Nome do Chatbot', value: 14, type: 'Builder' },
-  { name: 'Nome do Chatbot', value: 15, type: 'Builder' },
-  { name: 'Nome do Chatbot', value: 16, type: 'Builder' },
 ];
 
 const Home = () => {
@@ -126,9 +114,6 @@ const Home = () => {
           <BdsTypo variant="fs-20" bold="bold" margin={false}>
             Chatbotss em Contrato 1
           </BdsTypo>
-          <BdsButton icon="message-sent" variant="tertiary">
-            Criar Chatbot
-          </BdsButton>
         </BdsGrid>
         <BdsGrid xxs="12" margin="b-4" justify-content="space-between" align-items="center">
           <div className="divisor"></div>

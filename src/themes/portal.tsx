@@ -17,13 +17,13 @@ import {
   BdsThemeProvider,
   BdsTypo,
 } from 'blip-ds/dist/blip-ds-react/components';
+import Status from '../components/status';
 
 const Portal = (props: Props) => {
   const location = useLocation();
-  console.log(location.pathname);
   return (
     <bds-grid height="100%" xxs="12" direction="column">
-      <BdsThemeProvider theme="dark" class="header">
+      <BdsThemeProvider theme="light" class="header">
         <bds-grid height="100%" align-items="center">
           <BdsDropdown class="contract-maneger" position="bottom-right">
             <bds-grid slot="dropdown-activator">
@@ -72,7 +72,7 @@ const Portal = (props: Props) => {
         </BdsNavbar>
       </BdsThemeProvider>
       {location.pathname === "/home-chatbot" &&
-        <BdsThemeProvider theme="dark" class="nav-chatbot">
+        <BdsThemeProvider theme="light" class="nav-chatbot">
           <bds-grid height="fit-content" xxs="12" direction="column" class="work-contract">
             <bds-grid container container-fluid>
               <bds-grid height="100%" xxs="12" direction="column">
@@ -134,7 +134,7 @@ const Portal = (props: Props) => {
       {location.pathname === "/home" &&
         <bds-grid height="fit-content" xxs="12" direction="column" class="work-contract">
           <bds-grid container container-fluid>
-            <bds-grid height="100%" xxs="12" direction="column">
+            <bds-grid height="100%" xxs="12" direction="column" justifyContent='space-between'>
               <BdsNavbar orientation="horizontal" justifyContent="space-between">
                 <BdsNavbarContent>
                   <bds-typo variant="fs-20" bold="bold" margin={false}>
@@ -153,15 +153,19 @@ const Portal = (props: Props) => {
           </bds-grid>
         </bds-grid>
       }
-      <bds-grid height="100%" xxs="12" direction="column" class="content">
+      <bds-grid height="100%" xxs="12" direction="column" class="content" justify-content='space-between'>
         {props.slot}
-        <bds-grid margin="y-4" container container-fluid flex-wrap="wrap" class="footer">
-          <bds-grid xxs="12" justify-content="center" gap="1">
+        <bds-grid xxs="12" margin="y-2" flex-wrap="wrap" align-items="center" direction="row" justify-content="space-between" class="footer">
+          <div></div>
+          <bds-grid justify-content="center" gap="1">
             <BdsTypo variant="fs-12">© 2022 Blip - Powered by Take</BdsTypo>
             <BdsTypo variant="fs-12">|</BdsTypo>
             <BdsTypo variant="fs-12">Todos os direitos reservados</BdsTypo>
             <BdsTypo variant="fs-12">|</BdsTypo>
             <BdsTypo variant="fs-12">Termos de uso</BdsTypo>
+          </bds-grid>
+          <bds-grid>
+            <Status />
           </bds-grid>
         </bds-grid>
       </bds-grid>

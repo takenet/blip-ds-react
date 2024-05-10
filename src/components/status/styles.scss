@@ -1,0 +1,27 @@
+@import "~blip-ds/dist/collection/styles/_colors.scss";
+.status_bar {
+    border: 1px dashed $color-border-2;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.divisor {
+    width: auto;
+    height: 24px;
+    border: 0.5px solid $color-border-2;
+}
+
+.status_card {
+    display: none;
+    height: 0;
+    position: absolute;
+}
+
+.active {
+    display: flex;
+    bottom: 0;
+    right: 24px;
+    height: auto;
+    transform: translateY(10px);
+    animation: height 3s;
+}
