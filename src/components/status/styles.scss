@@ -1,27 +1,38 @@
-@import "~blip-ds/dist/collection/styles/_colors.scss";
+@import '~blip-ds/dist/collection/styles/_colors.scss';
 .status_bar {
-    border: 1px dashed $color-border-2;
-    border-radius: 8px;
-    cursor: pointer;
+  border: 1px dashed $color-border-2;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .divisor {
-    width: auto;
-    height: 24px;
-    border: 0.5px solid $color-border-2;
+  width: 0px;
+  height: 24px;
+  border: 0.5px solid $color-border-2;
+  padding: 0;
 }
 
 .status_card {
-    display: none;
-    height: 0;
-    position: absolute;
+  display: none;
+  height: 0;
+  position: absolute;
+  width: 500px;
 }
 
 .active {
-    display: flex;
-    bottom: 0;
-    right: 24px;
-    height: auto;
-    transform: translateY(10px);
-    animation: height 3s;
+  display: flex;
+  bottom: 0;
+  right: 16px;
+  height: auto;
+  transform: translateY(10px);
+  animation: height 3s;
+}
+
+@media (max-width: 500px) {
+  .active {
+    right: 0;
+  }
+  .status_card {
+    width: 100%;
+  }
 }

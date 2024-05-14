@@ -23,7 +23,7 @@ const Portal = (props: Props) => {
   const location = useLocation();
   return (
     <bds-grid height="100%" xxs="12" direction="column">
-      <BdsThemeProvider theme="light" class="header">
+      <BdsThemeProvider theme="dark" class="header">
         <bds-grid height="100%" align-items="center">
           <BdsDropdown class="contract-maneger" position="bottom-right">
             <bds-grid slot="dropdown-activator">
@@ -54,7 +54,7 @@ const Portal = (props: Props) => {
             </bds-grid>
           </BdsDropdown>
           <div className="divisor"></div>
-          <BdsNavbar orientation="horizontal" backgroundColor="surface-3" class="nav-header">
+          <BdsNavbar orientation="horizontal" backgroundColor="surface-2" class="nav-header">
             <BdsNavbarContent class="nav-header-itens">
               <bds-typo class="item">Home</bds-typo>
               <bds-typo class="item">Blip Store</bds-typo>
@@ -155,8 +155,7 @@ const Portal = (props: Props) => {
       }
       <bds-grid height="100%" xxs="12" direction="column" class="content" justify-content='space-between'>
         {props.slot}
-        <bds-grid xxs="12" margin="y-2" flex-wrap="wrap" align-items="center" direction="row" justify-content="space-between" class="footer">
-          <div></div>
+        <bds-grid xxs="12" container margin="y-2" padding='x-5' flex-wrap="wrap" align-items="center" direction="row" justify-content="space-between" class="footer">
           <bds-grid justify-content="center" gap="1">
             <BdsTypo variant="fs-12">© 2022 Blip - Powered by Take</BdsTypo>
             <BdsTypo variant="fs-12">|</BdsTypo>

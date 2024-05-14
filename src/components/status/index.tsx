@@ -7,7 +7,10 @@ const Status = () => {
   const [components, setComponents] = useState([]);
   const [responseTime, setResponseTime] = useState(Number);
   const [problem, setProblem] = useState([]);
-  const time_update = 50000;
+  const time_update = 5000;
+  const [updateTime, setUpdateTime] = useState(0);
+  const [lastUpdateTime, setLastUpdateTime] = useState(0);
+  const [detailUrl, setDetailUrl] = useState('');
 
   const fetchStatus = async () => {
     try {
@@ -37,8 +40,8 @@ const Status = () => {
         (component: { status: string }) => component.status === 'under_maintenance'
       );
 
+      setDetailUrl(data.page.url);
       const isUnderMaintenance = maintenanceComponents.length > 0;
-
       setStatus(isUnderMaintenance ? 'maintenance' : 'operational');
       setComponents(maintenanceComponents);
       setProblem(data.incidents);
@@ -48,15 +51,17 @@ const Status = () => {
   };
 
   useEffect(() => {
-    setTimeout(fetchStatus, 3000);
-    setTimeout(checkMaintenance, 3000);
+    setTimeout(fetchStatus, time_update);
+    setTimeout(checkMaintenance, time_update);
   }, []);
 
   const handleUpdate = () => {
+    setResponseTime(0);
     setComponents([]);
     setStatus('');
-    setTimeout(fetchStatus, 3000);
-    setTimeout(checkMaintenance, 3000);
+    setLastUpdateTime(Date.now());
+    setTimeout(fetchStatus, time_update);
+    setTimeout(checkMaintenance, time_update);
   };
 
   useEffect(() => {
@@ -64,10 +69,29 @@ const Status = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleUpdateTime = () => {
+    const now = Date.now();
+    const differenceInSeconds = Math.floor((now - lastUpdateTime) / 1000);
+    const differenceInMinutes = Math.floor(differenceInSeconds / 60);
+    setUpdateTime(differenceInMinutes);
+    if (differenceInMinutes >= 60) {
+      handleUpdate();
+    }
+  };
+
+  useEffect(() => {
+    if (lastUpdateTime !== 0) {
+      handleUpdateTime();
+    }
+    const interval = setInterval(handleUpdateTime, 60000);
+    return () => clearInterval(interval);
+  }, [lastUpdateTime]);
+
   const handleCard = () => {
     const card = document.querySelector('.status_card');
     card?.classList.toggle('active');
   };
+ 
   return (
     <bds-grid xxs="12" direction="row" height="100%">
       <bds-grid
@@ -81,18 +105,17 @@ const Status = () => {
         <bds-grid gap="half" align-items="center">
           {responseTime !== 0 ? (
             <bds-badge
-              icon={status === 'server-off' ? 'close' : responseTime < 3000 ? 'check' : 'warning'}
-              color={status === 'server-off' ? 'danger' : responseTime < 3000 ? 'success' : 'warning'}
+              icon={status === 'server-off' ? 'close' : responseTime < time_update ? 'check' : 'warning'}
+              color={status === 'server-off' ? 'danger' : responseTime < time_update ? 'success' : 'warning'}
             ></bds-badge>
           ) : (
             <bds-loading-spinner size="extra-small"></bds-loading-spinner>
           )}
-          <bds-typo variant="fs-14" bold="semi-bold">
+          <bds-typo variant="fs-14">
             {responseTime === 0 ? 'Verificando conexão' : status === 'server-off' ? 'Sem conexão' : 'Conexão'}
           </bds-typo>
         </bds-grid>
-        <bds-grid class="divisor"></bds-grid>
-
+        <div className="divisor"></div>
         <bds-grid gap="half" align-items="center">
           {status !== '' ? (
             <bds-badge
@@ -103,7 +126,7 @@ const Status = () => {
             <bds-loading-spinner size="extra-small"></bds-loading-spinner>
           )}
 
-          <bds-typo variant="fs-14" bold="semi-bold">
+          <bds-typo variant="fs-14">
             {responseTime === 0
               ? 'Verificando os serviços Blip'
               : status === 'operational'
@@ -114,13 +137,13 @@ const Status = () => {
       </bds-grid>
       {/* Card de status */}
       <bds-grid class="status_card">
-        <bds-card width="500px">
+        <bds-card width='100%'>
           <bds-card-header>
             <bds-typo variant="fs-16" bold="bold">
               Status dos serviços
             </bds-typo>
             <bds-grid gap="1" align-items="center">
-              <bds-typo variant="fs-10">Atualizado há {time_update / 1000} segundos</bds-typo>
+              <bds-typo variant="fs-10">Atualizado há {updateTime} minutos</bds-typo>
               <BdsButtonIcon
                 onBdsClick={() => handleUpdate()}
                 variant="tertiary"
@@ -136,7 +159,7 @@ const Status = () => {
             </bds-grid>
           </bds-card-header>
           <bds-card-body>
-            <bds-grid direction="column" gap="half" xxs="12">
+            <bds-grid direction="column" gap="1" xxs="12">
               {/* Card de conexão do usuário */}
               <bds-paper border elevation="none" width="100%">
                 <bds-grid padding="1" xxs="12" justify-content="space-between" align-items="center">
@@ -147,7 +170,13 @@ const Status = () => {
                         Conexão
                       </bds-typo>
                       <bds-grid align-items="center" justify-content="space-between">
-                        <bds-typo variant="fs-12">Sua conexão está funcionando normalmente</bds-typo>
+                        <bds-typo variant="fs-12">
+                          {responseTime === 0
+                            ? 'Verificando conexão'
+                            : status === 'server-off'
+                            ? 'Sem conexão'
+                            : 'Sua conexão está funcionando corretamente.'}
+                        </bds-typo>
                         <bds-typo variant="fs-10">{responseTime} ms</bds-typo>
                       </bds-grid>
                     </bds-grid>
@@ -155,8 +184,8 @@ const Status = () => {
                   <bds-grid xxs="1" justify-content="center">
                     {responseTime !== 0 ? (
                       <bds-badge
-                        icon={responseTime < 3000 ? 'check' : 'warning'}
-                        color={responseTime < 3000 ? 'success' : 'warning'}
+                        icon={responseTime < time_update ? 'check' : 'warning'}
+                        color={responseTime < time_update ? 'success' : 'warning'}
                       ></bds-badge>
                     ) : (
                       <bds-loading-spinner size="extra-small"></bds-loading-spinner>
@@ -181,7 +210,7 @@ const Status = () => {
                             {responseTime === 0
                               ? 'Verificando os serviços Blip'
                               : status === 'operational'
-                              ? 'Serviços Blip'
+                              ? 'Os serviços Blip estão funcionando normalmente.'
                               : 'Serviços Blip instáveis'}
                           </bds-typo>
                         </bds-grid>
@@ -189,7 +218,7 @@ const Status = () => {
                     </bds-grid>
                     <bds-grid xxs="1" justify-content="center">
                       {status !== '' && status === 'operational' ? (
-                        <bds-badge icon="operational" color="success"></bds-badge>
+                        <bds-badge icon="check" color="success"></bds-badge>
                       ) : responseTime === 0 ? (
                         <bds-loading-spinner size="extra-small"></bds-loading-spinner>
                       ) : (
@@ -231,7 +260,7 @@ const Status = () => {
               </bds-paper>
               {/* -------------------------------- */}
               <bds-grid justify-content="flex-end" margin="y-2">
-                <bds-button variant="tertiary" size="short">
+                <bds-button variant="tertiary" size="short" onClick={() => {window.open(detailUrl)}}>
                   Mais detalhes
                 </bds-button>
               </bds-grid>
