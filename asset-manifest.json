@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/blip-screen-templates/static/css/main.7f2e2507.css",
-    "main.js": "/blip-screen-templates/static/js/main.a4e2b51e.js",
+    "main.css": "/blip-screen-templates/static/css/main.1d9b73f1.css",
+    "main.js": "/blip-screen-templates/static/js/main.91ddd627.js",
     "static/js/1629.b3211115.chunk.js": "/blip-screen-templates/static/js/1629.b3211115.chunk.js",
     "static/js/7351.656515f1.chunk.js": "/blip-screen-templates/static/js/7351.656515f1.chunk.js",
     "static/js/1452.3a11b048.chunk.js": "/blip-screen-templates/static/js/1452.3a11b048.chunk.js",
@@ -101,8 +101,8 @@
     "static/js/7676.f81231de.chunk.js": "/blip-screen-templates/static/js/7676.f81231de.chunk.js",
     "static/media/image.svg": "/blip-screen-templates/static/media/image.38138317b12ddfc2aa6c.svg",
     "index.html": "/blip-screen-templates/index.html",
-    "main.7f2e2507.css.map": "/blip-screen-templates/static/css/main.7f2e2507.css.map",
-    "main.a4e2b51e.js.map": "/blip-screen-templates/static/js/main.a4e2b51e.js.map",
+    "main.1d9b73f1.css.map": "/blip-screen-templates/static/css/main.1d9b73f1.css.map",
+    "main.91ddd627.js.map": "/blip-screen-templates/static/js/main.91ddd627.js.map",
     "1629.b3211115.chunk.js.map": "/blip-screen-templates/static/js/1629.b3211115.chunk.js.map",
     "7351.656515f1.chunk.js.map": "/blip-screen-templates/static/js/7351.656515f1.chunk.js.map",
     "5496.584ffc3a.chunk.js.map": "/blip-screen-templates/static/js/5496.584ffc3a.chunk.js.map",
@@ -201,7 +201,7 @@
     "7676.f81231de.chunk.js.map": "/blip-screen-templates/static/js/7676.f81231de.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f2e2507.css",
-    "static/js/main.a4e2b51e.js"
+    "static/css/main.1d9b73f1.css",
+    "static/js/main.91ddd627.js"
   ]
 }
