@@ -39,7 +39,7 @@ const Status = () => {
       const maintenanceComponents = data.components.filter(
         (component: { status: string }) => component.status === 'under_maintenance'
       );
-
+      console.log(data);
       setDetailUrl(data.page.url);
       const isUnderMaintenance = maintenanceComponents.length > 0;
       setStatus(isUnderMaintenance ? 'maintenance' : 'operational');
@@ -91,7 +91,7 @@ const Status = () => {
     const card = document.querySelector('.status_card');
     card?.classList.toggle('active');
   };
- 
+
   return (
     <bds-grid xxs="12" direction="row" height="100%">
       <bds-grid
@@ -137,9 +137,10 @@ const Status = () => {
       </bds-grid>
       {/* Card de status */}
       <bds-grid class="status_card">
-        <bds-card width='100%'>
-          <bds-card-header>
-            <bds-typo variant="fs-16" bold="bold">
+        <bds-card width="100%">
+          <bds-grid direction='column' gap="2" padding="none">
+            <bds-grid align-items="center" justify-content="space-between" margin='l-1' padding="none">
+               <bds-typo variant="fs-16" bold="bold">
               Status dos serviços
             </bds-typo>
             <bds-grid gap="1" align-items="center">
@@ -157,9 +158,11 @@ const Status = () => {
                 icon="less"
               ></BdsButtonIcon>
             </bds-grid>
-          </bds-card-header>
-          <bds-card-body>
-            <bds-grid direction="column" gap="1" xxs="12">
+          
+            </bds-grid>
+
+            <bds-grid padding='none' class="problem-card">
+              <bds-grid direction="column" padding='none' gap="1" xxs="12">
               {/* Card de conexão do usuário */}
               <bds-paper border elevation="none" width="100%">
                 <bds-grid padding="1" xxs="12" justify-content="space-between" align-items="center">
@@ -169,7 +172,7 @@ const Status = () => {
                       <bds-typo variant="fs-16" bold="semi-bold">
                         Conexão
                       </bds-typo>
-                      <bds-grid align-items="center" justify-content="space-between">
+                      <bds-grid padding="none" align-items="center" justify-content="space-between">
                         <bds-typo variant="fs-12">
                           {responseTime === 0
                             ? 'Verificando conexão'
@@ -197,15 +200,15 @@ const Status = () => {
 
               {/* Card de serviços Blip */}
               <bds-paper border elevation="none" width="100%">
-                <bds-grid direction="column">
-                  <bds-grid padding="1" xxs="12" justify-content="space-between" align-items="center">
+                <bds-grid direction="column" class="problem_row">
+                  <bds-grid padding="none" margin="y-1" xxs="12" justify-content="space-between" align-items="center">
                     <bds-grid xxs="11" align-items="center" gap="1">
                       <bds-icon name="cloud"></bds-icon>
                       <bds-grid xxs="11" direction="column">
                         <bds-typo variant="fs-16" bold="semi-bold">
                           Serviços Blip
                         </bds-typo>
-                        <bds-grid align-items="center" justify-content="space-between">
+                        <bds-grid padding="none" align-items="center" justify-content="space-between">
                           <bds-typo variant="fs-12">
                             {responseTime === 0
                               ? 'Verificando os serviços Blip'
@@ -217,12 +220,12 @@ const Status = () => {
                       </bds-grid>
                     </bds-grid>
                     <bds-grid xxs="1" justify-content="center">
-                      {status !== '' && status === 'operational' ? (
+                      {status === 'operational' ? (
                         <bds-badge icon="check" color="success"></bds-badge>
-                      ) : responseTime === 0 ? (
-                        <bds-loading-spinner size="extra-small"></bds-loading-spinner>
-                      ) : (
+                      ) : status !== '' && status !== 'operational' ? (
                         ''
+                      ) : (
+                        <bds-loading-spinner size="extra-small"></bds-loading-spinner>
                       )}
                     </bds-grid>
                   </bds-grid>
@@ -260,12 +263,23 @@ const Status = () => {
               </bds-paper>
               {/* -------------------------------- */}
               <bds-grid justify-content="flex-end" margin="y-2">
-                <bds-button variant="tertiary" size="short" onClick={() => {window.open(detailUrl)}}>
+                <bds-button
+                  variant="tertiary"
+                  size="short"
+                  onClick={() => {
+                    window.open(detailUrl);
+                  }}
+                >
                   Mais detalhes
                 </bds-button>
               </bds-grid>
             </bds-grid>
-          </bds-card-body>
+            </bds-grid>
+          </bds-grid>
+           
+        
+            
+          
         </bds-card>
       </bds-grid>
     </bds-grid>

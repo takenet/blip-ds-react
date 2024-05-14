@@ -155,7 +155,7 @@ const Portal = (props: Props) => {
       }
       <bds-grid height="100%" xxs="12" direction="column" class="content" justify-content='space-between'>
         {props.slot}
-        <bds-grid xxs="12" container margin="y-2" padding='x-5' flex-wrap="wrap" align-items="center" direction="row" justify-content="space-between" class="footer">
+        <bds-grid xxs="12" container-fluid margin="y-2" flex-wrap="wrap" align-items="center" direction="row" justify-content="space-between" class="footer">
           <bds-grid justify-content="center" gap="1">
             <BdsTypo variant="fs-12">© 2022 Blip - Powered by Take</BdsTypo>
             <BdsTypo variant="fs-12">|</BdsTypo>

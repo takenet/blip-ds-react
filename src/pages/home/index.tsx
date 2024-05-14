@@ -145,7 +145,6 @@ const Home = () => {
             </Link>
           </BdsGrid>
         ))}
-        ;
       </BdsGrid>
     </>
   );
