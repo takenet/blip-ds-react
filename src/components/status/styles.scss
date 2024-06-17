@@ -13,11 +13,13 @@
 }
 
 .status_card {
+  background-color: $color-surface-0;
   display: none;
   height: 0;
   position: absolute;
   width: 500px;
   max-height: 80%;
+  min-height: 284px;
   overflow-y: auto;
 }
 
