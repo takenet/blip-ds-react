@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkblip_screen_templates=self.webpackChunkblip_screen_templates||[]).push([[9643],{9643:function(e,r,t){t.r(r),t.d(r,{bds_table_header:function(){return l}});var n=t(6510),l=function(){function e(e){(0,n.r)(this,e)}return e.prototype.render=function(){return(0,n.h)(n.H,null,(0,n.h)("slot",null))},e}();l.style=".sc-bds-table-header-h{display:table-header-group;border-bottom:1px solid var(--color-border-1, #B1B1B1)}"}}]);
-//# sourceMappingURL=9643.39741a7f.chunk.js.map
