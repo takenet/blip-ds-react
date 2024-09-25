@@ -23,10 +23,10 @@ const data = [
 const Home = () => {
   return (
     <>
-      <BdsGrid margin="y-4" container container-fluid flex-wrap="wrap">
+      <BdsGrid margin="y-4" container flex-wrap="wrap">
         <BdsGrid xxs="12" xs="12" sm="12" md="12" lg="12" xg="12" margin="y-2" direction="column">
           <BdsPaper class="w-100">
-            <BdsGrid margin="y-4" container container-fluid align-items="center" flex-wrap="wrap">
+            <BdsGrid margin="y-4" container align-items="center" flex-wrap="wrap">
               <BdsGrid xxs="12" xs="12" sm="12" md="3" lg="3" xg="3" margin="y-2" direction="column" padding="x-6">
                 <BdsIllustration type="blip-solid" name="agent" class="illustration-bot"></BdsIllustration>
               </BdsGrid>
@@ -49,7 +49,7 @@ const Home = () => {
         <BdsGrid xxs="12" xs="12" sm="12" md="4" lg="4" xg="4" margin="y-2" direction="column">
           <BdsCard clickable width="100%" class="card-initial-config">
             <BdsCardBody class="card-initial-config-body">
-              <BdsGrid container container-fluid height="160px" align-items="center" flex-wrap="wrap">
+              <BdsGrid container height="160px" align-items="center" flex-wrap="wrap">
                 <BdsGrid xxs="3" xs="3" sm="2" md="2" lg="2" xg="2" justify-content="center">
                   <BdsIcon theme="outline" name="business" size="x-large" class="icon-card"></BdsIcon>
                 </BdsGrid>
@@ -66,7 +66,7 @@ const Home = () => {
         <BdsGrid xxs="12" xs="12" sm="12" md="4" lg="4" xg="4" margin="y-2" direction="column">
           <BdsCard clickable width="100%" class="card-initial-config">
             <BdsCardBody class="card-initial-config-body">
-              <BdsGrid container container-fluid height="160px" align-items="center" flex-wrap="wrap">
+              <BdsGrid container height="160px" align-items="center" flex-wrap="wrap">
                 <BdsGrid xxs="3" xs="3" sm="2" md="2" lg="2" xg="2" justify-content="center">
                   <BdsIcon theme="outline" name="builder-publish-bot" size="x-large" class="icon-card"></BdsIcon>
                 </BdsGrid>
@@ -85,7 +85,7 @@ const Home = () => {
         <BdsGrid xxs="12" xs="12" sm="12" md="4" lg="4" xg="4" margin="y-2" direction="column">
           <BdsCard clickable width="100%" class="card-initial-config">
             <BdsCardBody class="card-initial-config-body">
-              <BdsGrid container container-fluid height="160px" align-items="center" flex-wrap="wrap">
+              <BdsGrid container height="160px" align-items="center" flex-wrap="wrap">
                 <BdsGrid xxs="3" xs="3" sm="2" md="2" lg="2" xg="2" justify-content="center">
                   <BdsIcon theme="outline" name="question" size="x-large" class="icon-card"></BdsIcon>
                 </BdsGrid>

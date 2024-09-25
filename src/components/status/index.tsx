@@ -1,4 +1,4 @@
-import { BdsButtonIcon } from 'blip-ds/dist/blip-ds-react/components';
+import { BdsButtonIcon, BdsCheckbox, BdsIcon, BdsTooltip } from 'blip-ds/dist/blip-ds-react/components';
 import { useState, useEffect } from 'react';
 import './styles.scss';
 
@@ -37,34 +37,33 @@ const Status = () => {
     }
   };
 
-
   // FUNÇÃO PARA OBTER OS DADOS DA API
 
   const checkMaintenance = async () => {
     try {
       // Faz uma requisição HTTP GET para o endpoint especificado
       const response = await fetch('https://status.blip.ai/api/v2/summary.json');
-      
+
       // Converte a resposta em JSON
       const data = await response.json();
-      
+
       // Filtra os componentes da resposta que estão em manutenção
       const maintenanceComponents = data.components.filter(
         (component: { status: string }) => component.status === 'under_maintenance'
       );
-      
+
       // Define a URL da página de detalhes do status, extraída da resposta da API
       setDetailUrl(data.page.url);
-      
+
       // Verifica se há componentes em manutenção
       const isUnderMaintenance = maintenanceComponents.length > 0;
-      
+
       // Define o status como 'maintenance' se houver componentes em manutenção, ou 'operational' caso contrário
-      setStatus(isUnderMaintenance ? 'maintenance' : 'operational');
-      
+      setStatus(isUnderMaintenance ? 'operational' : 'maintenance');
+
       // Armazena os componentes em manutenção
       setComponents(maintenanceComponents);
-      
+
       // Armazena os incidentes atuais extraídos da resposta da API
       setProblem(data.incidents);
     } catch (error) {
@@ -104,16 +103,16 @@ const Status = () => {
   const handleUpdateTime = () => {
     // Obtém o tempo atual em milissegundos
     const now = Date.now();
-    
+
     // Calcula a diferença em segundos entre o tempo atual e o tempo da última atualização
     const differenceInSeconds = Math.floor((now - lastUpdateTime) / 1000);
-    
+
     // Converte a diferença de segundos para minutos
     const differenceInMinutes = Math.floor(differenceInSeconds / 60);
-    
+
     // Define o tempo de atualização (em minutos)
     setUpdateTime(differenceInMinutes);
-    
+
     // Se a diferença em minutos for maior ou igual a 60, chama a função handleUpdate
     if (differenceInMinutes >= 60) {
       handleUpdate();
@@ -136,8 +135,6 @@ const Status = () => {
 
   return (
     <bds-grid xxs="12" direction="row" height="100%">
-
-
       {/* Barra de status minificado */}
       <bds-grid
         class="status_bar"
@@ -209,7 +206,6 @@ const Status = () => {
 
             <bds-grid padding="none" class="problem-card">
               <bds-grid direction="column" padding="none" gap="1" xxs="12">
-
                 {/* Bloco de conexão do usuário */}
                 <bds-paper border elevation="none" width="100%">
                   <bds-grid padding="1" xxs="12" justify-content="space-between" align-items="center">
@@ -246,12 +242,12 @@ const Status = () => {
                 {/* --------------------------- */}
 
                 {/* Card de serviços Blip */}
-                <bds-paper border elevation="none" width="100%">
+                <bds-paper border elevation="none" width="100%" class='paper-problem_row'>
                   <bds-grid direction="column" class="problem_row">
                     <bds-grid padding="none" margin="y-1" xxs="12" justify-content="space-between" align-items="center">
-                      <bds-grid xxs="11" align-items="center" gap="1">
+                      <bds-grid xxs={status !== 'operational' ? '6' : '11'} align-items="center" gap="1">
                         <bds-icon name="cloud"></bds-icon>
-                        <bds-grid xxs="11" direction="column">
+                        <bds-grid xxs='12' direction="column">
                           <bds-typo variant="fs-16" bold="semi-bold">
                             Serviços Blip
                           </bds-typo>
@@ -266,11 +262,19 @@ const Status = () => {
                           </bds-grid>
                         </bds-grid>
                       </bds-grid>
-                      <bds-grid xxs="1" justify-content="center">
+                      <bds-grid xxs={status !== 'operational' ? '4' : '1'} justify-content="center">
                         {status === 'operational' ? (
                           <bds-badge icon="check" color="success"></bds-badge>
                         ) : status !== '' && status !== 'operational' ? (
-                          ''
+                          <bds-button
+                            variant="tertiary"
+                            size="short"
+                            onClick={() => {
+                              window.open(detailUrl);
+                            }}
+                          >
+                            Mais detalhes
+                          </bds-button>
                         ) : (
                           <bds-loading-spinner size="extra-small"></bds-loading-spinner>
                         )}
@@ -293,37 +297,26 @@ const Status = () => {
                           </bds-grid>
                         ))
                       : null}
-                    {status === 'maintenance' && problem
-                      ? problem.map((obj: any) => (
-                          <bds-grid key={obj.name} margin="y-3" padding="x-2" xxs="12" justify-content="space-between">
-                            <bds-grid padding="l-1" direction="column">
-                              <bds-typo variant="fs-14" bold="bold">
-                                {obj.name}
-                              </bds-typo>
-                              <bds-typo variant="fs-14">{obj.incident_updates[0].body}</bds-typo>
-                            </bds-grid>
-                            <bds-badge color="warning" icon="settings-builder"></bds-badge>
-                          </bds-grid>
-                        ))
-                      : null}
                   </bds-grid>
+                  {status === 'maintenance' && (
+                    <bds-grid height="27px" class="fading-bottom"></bds-grid>
+                  )}
+                  
                 </bds-paper>
                 {/* -------------------------------- */}
 
                 {/* Botão de mais detalhes */}
-                <bds-grid justify-content="flex-end" margin="y-2">
-                  <bds-button
-                    variant="tertiary"
-                    size="short"
-                    onClick={() => {
-                      window.open(detailUrl);
-                    }}
+                <bds-grid justify-content="flex-start" margin="y-2" gap="1" alignItems="center">
+                  <BdsCheckbox refer="check" name="check" label="Não exibir esse alerta novamente" />
+                  <BdsTooltip
+                    tooltipText="Ative essa opção para desabilitar alertas de oscilação
+em sua conexão ou incidentes nos serviços Blip."
+                    position="top-right"
                   >
-                    Mais detalhes
-                  </bds-button>
+                    <BdsIcon name="info"></BdsIcon>
+                  </BdsTooltip>
                 </bds-grid>
                 {/* ----------------------------------------- */}
-
               </bds-grid>
             </bds-grid>
           </bds-grid>
