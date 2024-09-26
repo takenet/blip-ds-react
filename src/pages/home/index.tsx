@@ -12,6 +12,7 @@ import {
   BdsPaper,
   BdsTypo,
 } from 'blip-ds/dist/blip-ds-react/components';
+import PassiveFeedback from '../../components/PassiveFeedback';
 
 const data = [
   { name: 'Nome do Chatbot', value: 1, type: 'Builder' },
@@ -21,10 +22,16 @@ const data = [
 ];
 
 const Home = () => {
+  const dataPassiveFeedBack = (ev: CustomEvent) => {
+    console.log('Retorno da funcionalidade', ev.detail);
+  };
+  window.addEventListener('onLikeFeedback', () => console.log('onLikeFeedback'), false);
+  window.addEventListener('onDisikeFeedback', () => console.log('onDisikeFeedback'), false);
+  window.addEventListener('onSubmitFeedback', (ev) => dataPassiveFeedBack(ev as CustomEvent), false);
   return (
     <>
-      <BdsGrid margin="y-4" container flex-wrap="wrap">
-        <BdsGrid xxs="12" xs="12" sm="12" md="12" lg="12" xg="12" margin="y-2" direction="column">
+      <BdsGrid margin="y-4" containerFluid flex-wrap="wrap">
+        <BdsGrid xxs="12" xs="12" sm="12" md="12" lg="12" xg="12" margin="y-2" direction="column" gap="2">
           <BdsPaper class="w-100">
             <BdsGrid margin="y-4" container align-items="center" flex-wrap="wrap">
               <BdsGrid xxs="12" xs="12" sm="12" md="3" lg="3" xg="3" margin="y-2" direction="column" padding="x-6">
@@ -45,6 +52,7 @@ const Home = () => {
               </BdsGrid>
             </BdsGrid>
           </BdsPaper>
+          <PassiveFeedback functionTitle="Criação de chatbot"></PassiveFeedback>
         </BdsGrid>
         <BdsGrid xxs="12" xs="12" sm="12" md="4" lg="4" xg="4" margin="y-2" direction="column">
           <BdsCard clickable width="100%" class="card-initial-config">

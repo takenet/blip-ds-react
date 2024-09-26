@@ -22,7 +22,7 @@ import Status from '../components/status';
 const Portal = (props: Props) => {
   const location = useLocation();
   return (
-    <bds-grid height="100%" xxs="12" direction="column">
+    <bds-grid height="100%" xxs="12" padding="none" direction="column">
       <BdsThemeProvider theme="dark" class="header">
         <bds-grid height="100%" align-items="center">
           <BdsDropdown class="contract-maneger" position="bottom-right">
@@ -71,7 +71,7 @@ const Portal = (props: Props) => {
           </BdsNavbarContent>
         </BdsNavbar>
       </BdsThemeProvider>
-      {location.pathname === "/home-chatbot" &&
+      {location.pathname === '/home-chatbot' && (
         <BdsThemeProvider theme="light" class="nav-chatbot">
           <bds-grid height="fit-content" xxs="12" direction="column" class="work-contract">
             <bds-grid container container-fluid>
@@ -130,11 +130,11 @@ const Portal = (props: Props) => {
             </bds-grid>
           </bds-grid>
         </BdsThemeProvider>
-      }
-      {location.pathname === "/home" &&
+      )}
+      {location.pathname === '/home' && (
         <bds-grid height="fit-content" xxs="12" direction="column" class="work-contract">
           <bds-grid container container-fluid>
-            <bds-grid height="100%" xxs="12" direction="column" justifyContent='space-between'>
+            <bds-grid height="100%" xxs="12" direction="column" justifyContent="space-between">
               <BdsNavbar orientation="horizontal" justifyContent="space-between">
                 <BdsNavbarContent>
                   <bds-typo variant="fs-20" bold="bold" margin={false}>
@@ -152,10 +152,19 @@ const Portal = (props: Props) => {
             </bds-grid>
           </bds-grid>
         </bds-grid>
-      }
-      <bds-grid height="100%" xxs="12" direction="column" class="content" justify-content='space-between'>
+      )}
+      <bds-grid height="100%" xxs="12" direction="column" class="content" justify-content="space-between">
         {props.slot}
-        <bds-grid xxs="12" container-fluid margin="y-2" flex-wrap="wrap" align-items="center" direction="row" justify-content="space-between" class="footer">
+        <bds-grid
+          xxs="12"
+          container-fluid
+          margin="y-2"
+          flex-wrap="wrap"
+          align-items="center"
+          direction="row"
+          justify-content="space-between"
+          class="footer"
+        >
           <bds-grid justify-content="center" gap="1">
             <BdsTypo variant="fs-12">© 2022 Blip - Powered by Take</BdsTypo>
             <BdsTypo variant="fs-12">|</BdsTypo>
